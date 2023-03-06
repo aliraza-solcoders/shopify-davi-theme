@@ -51,16 +51,16 @@ function showTab(n) {
         field_settings[label] = $( this ).val();
     });
     jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
+        // label = $(this).prev().prev().text();
+        field_settings['Address'] = $( this ).val();
     });
     jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
+        // label = $(this).prev().prev().text();
+        field_settings['Address'] = $( this ).val();
     });
     jQuery( "input[name=davi_input_state]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
+        // label = $(this).prev().prev().text();
+        field_settings['Address'] = $( this ).val();
     });
     for (var key in field_settings) {
       console.log("key " + key + " has value " + field_settings[key]);
