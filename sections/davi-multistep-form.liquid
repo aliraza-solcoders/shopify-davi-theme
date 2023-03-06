@@ -47,7 +47,7 @@
     {% else %}
     {% endif %}
   {% endfor %}
-  <button type="btn" id="submit_btn" class="btn--secondary">Submit</button>
+  <button type="button" id="submit_btn" class="btn--secondary">Submit</button>
   </form>
   </div>
   </div>
@@ -205,7 +205,10 @@
         });
      });
     jQuery("#submit_btn").click(function(){
-        console.log(jQuery( "input[name=davi_input_text]" ).val());
+
+      jQuery( "input[name=davi_input_text]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).text() );
+      });
     });
     }, 2000);
   
