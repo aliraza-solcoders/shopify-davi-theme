@@ -15,123 +15,63 @@ function showTab(n) {
     
     var values;
     jQuery( "input[name=davi_input_text]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_date]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "select[name=davi_products]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_address]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery( "input[name=davi_input_state]" ).each(function( index ) {
-      
-        var parentElem = $(this).siblings(),
-            parentTagName = parentElem.get(0).tagName.toLowerCase();
+        label = $(this).prev().prev().text();
         
-        if(parentTagName == "label") {
-            label = parentElem.get(0).html();
-        }
       values += label+': '+$( this ).val() ;
     });
     jQuery('#form_values').html(values)
