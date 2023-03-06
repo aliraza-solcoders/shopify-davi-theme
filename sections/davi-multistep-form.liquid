@@ -60,7 +60,7 @@
         {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multiplefile" %}
           <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
         {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "date" %}
-          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
+          <input type="text" oninput="this.className = 'davi-theme date'" class="davi-theme date" name="davi_input_date" class="date" >
         {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "dropdown" %}
           {% assign dropdown =  block.settings.davi_field_value | split: "," %}
           <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
@@ -101,7 +101,7 @@
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "multiplefile" %}
           <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "date" %}
-          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
+          <input type="text" oninput="this.className = 'davi-theme date'" class="davi-theme date" name="davi_input_date" class="date" >
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "dropdown" %}
           {% assign dropdown =  block.settings.davi_field_value | split: "," %}
           <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
