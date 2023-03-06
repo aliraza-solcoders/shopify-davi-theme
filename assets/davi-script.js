@@ -66,6 +66,7 @@ function showTab(n) {
       console.log("key " + key + " has value " + field_settings[key]);
     }
     var form_type = $( 'input[name=davi_form_type]' ).val();
+    var shop = $('#shop').val();
     var data = {
       shop: shop,
       form_type: form_type,
