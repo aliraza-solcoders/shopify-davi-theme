@@ -3,7 +3,7 @@
 <script src="{{ 'davi-script.js' | asset_url }}" defer="defer"></script>
   <div class="container davi-customize">
   <div id="form" style="display:none; padding : 20px;">
-    <h2>{{ section.settings.section_title}}</h2>
+    <h2>{{ section.settings.section_title }}</h2>
     <form id="contactForm" enctype="multipart/form-data">
     <div class="tab step1" >
       {% for block in section.blocks %}    
@@ -132,7 +132,11 @@
     <div id="form_values" >
     </div>
   </div>
-  
+  {% if section.settings.section_title %}
+    <input type="hidden" name="davi_form_type" value="{{ section.settings.section_title }}" />
+  {% else %}
+    <input type="hidden" name="davi_form_type" value="Multistep Form" />
+  {% endif %}
   <div style="overflow:auto; margin-top:20px;">
     <div style="float:right;">
       <button type="button" class="davi-theme" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
