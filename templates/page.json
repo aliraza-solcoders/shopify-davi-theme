@@ -24,7 +24,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "testing",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "text",
             "davi_field_value": "testing"
           }
@@ -33,7 +33,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Date of Birth",
-            "davi_field_show": "step1",
+            "davi_field_show": "step3",
             "davi_field_type": "date",
             "davi_field_value": ""
           }
@@ -51,7 +51,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Address",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "address",
             "davi_field_value": ""
           }
@@ -60,7 +60,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Single File",
-            "davi_field_show": "step1",
+            "davi_field_show": "step3",
             "davi_field_type": "file",
             "davi_field_value": ""
           }
@@ -69,7 +69,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Multiple File",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "multiplefile",
             "davi_field_value": ""
           }
@@ -87,7 +87,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Dropdown",
-            "davi_field_show": "step1",
+            "davi_field_show": "step3",
             "davi_field_type": "dropdown",
             "davi_field_value": "html, css, js, react, laravel, php"
           }
@@ -96,7 +96,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Multiple Dropdown",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "multipledropdown",
             "davi_field_value": "html, css, js, react, laravel, php"
           }
