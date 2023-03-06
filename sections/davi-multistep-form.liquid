@@ -6,129 +6,132 @@
     <h2>{{ section.settings.section_title}}</h2>
     <form id="contactForm" enctype="multipart/form-data">
     <div class="tab step1" >
-    {% for block in section.blocks %}    
-      {% if block.settings.davi_field_show == 'step1' %}
-        <label>{{ block.settings.davi_field_label }}</label><br/>
-      {% endif %}
-      {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "pdf" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "file" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_file" >
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multiplefile" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "date" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "dropdown" %}
-        {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-        <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
-          {% for option in dropdown %}
-            <option>{{ option }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multipledropdown" %}
-        {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-        <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
-          {% for option in dropdown %}
-            <option>{{ option }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "products" %}
-        <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
-          {% for product in collections['all'].products %}
-              <option title="{{ product.sku }}">{{ product.title }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "address" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
-      {% endif %}
-    {% endfor %}
+      {% for block in section.blocks %}    
+        {% if block.settings.davi_field_show == 'step1' %}
+          <label>{{ block.settings.davi_field_label }}</label><br/>
+        {% endif %}
+        {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "pdf" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "file" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_file" >
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multiplefile" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "date" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "dropdown" %}
+          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+          <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
+            {% for option in dropdown %}
+              <option>{{ option }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multipledropdown" %}
+          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+          <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
+            {% for option in dropdown %}
+              <option>{{ option }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "products" %}
+          <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
+            {% for product in collections['all'].products %}
+                <option title="{{ product.sku }}">{{ product.title }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "address" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
+        {% endif %}
+      {% endfor %}
     </div>
     <div class="tab step2" >
       {% for block in section.blocks %}   
-      {% if block.settings.davi_field_show == 'step2' %}
-        <label>{{ block.settings.davi_field_label }}</label><br/>
-      {% endif %}
-      {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "pdf" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "file" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_file" >
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multiplefile" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "date" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "dropdown" %}
-        {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-        <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
-          {% for option in dropdown %}
-            <option>{{ option }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multipledropdown" %}
-        {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-        <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
-          {% for option in dropdown %}
-            <option>{{ option }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "products" %}
-        <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
-          {% for product in collections['all'].products %}
-              <option title="{{ product.sku }}">{{ product.title }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
-      {% endif %}
-    {% endfor %}
-      
+        {% if block.settings.davi_field_show == 'step2' %}
+          <label>{{ block.settings.davi_field_label }}</label><br/>
+        {% endif %}
+        {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "pdf" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "file" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_file" >
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multiplefile" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "date" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "dropdown" %}
+          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+          <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
+            {% for option in dropdown %}
+              <option>{{ option }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multipledropdown" %}
+          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+          <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
+            {% for option in dropdown %}
+              <option>{{ option }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "products" %}
+          <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
+            {% for product in collections['all'].products %}
+                <option title="{{ product.sku }}">{{ product.title }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
+        {% endif %}
+      {% endfor %}
     </div>
     <div class="tab step3" >
       {% for block in section.blocks %}   
-      {% if block.settings.davi_field_show == 'step1' %}
-        <label>{{ block.settings.davi_field_label }}</label><br/>
-      {% endif %}
-      {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "text" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "pdf" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "file" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_file" >
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "multiplefile" %}
-        <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "date" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "dropdown" %}
-        {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-        <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
-          {% for option in dropdown %}
-            <option>{{ option }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "multipledropdown" %}
-        {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-        <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
-          {% for option in dropdown %}
-            <option>{{ option }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "products" %}
-        <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
-          {% for product in collections['all'].products %}
-              <option title="{{ product.sku }}">{{ product.title }}</option>
-          {% endfor %}
-        </select><br>
-      {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "address" %}
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
-        <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
-      {% endif %}
-    {% endfor %}
+        {% if block.settings.davi_field_show == 'step3' %}
+          <label>{{ block.settings.davi_field_label }}</label><br/>
+        {% endif %}
+        {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "text" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "pdf" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "file" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_file" >
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "multiplefile" %}
+          <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "date" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "dropdown" %}
+          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+          <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
+            {% for option in dropdown %}
+              <option>{{ option }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "multipledropdown" %}
+          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+          <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
+            {% for option in dropdown %}
+              <option>{{ option }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "products" %}
+          <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
+            {% for product in collections['all'].products %}
+                <option title="{{ product.sku }}">{{ product.title }}</option>
+            {% endfor %}
+          </select><br>
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "address" %}
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
+          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
+        {% endif %}
+      {% endfor %}
     </div>
+  <div class="tab step4" >
+    <div id="form_values" >
+    </div>
+  </div>
   
   <div style="overflow:auto;">
     <div style="float:right;">
@@ -249,88 +252,136 @@
 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
 <!-- Javascript -->
 <script>
-  function matchStart(params, data) {
-    
-  // If there are no search terms, return all of the data
-  if ($.trim(params.term) === '') {
-    return data;
-  }
-
-  // Skip if there is no 'children' property
-  // if (typeof data.children === 'undefined') {
-  //   return null;
-  // }
-
-  // `data.children` contains the actual options that we are matching against
-  var filteredChildren = [];
-  $.each(data.children, function (idx, child) {
-    if (child.text.toUpperCase().indexOf(params.term.toUpperCase()) == 0) {
-      filteredChildren.push(child);
-    }
-  });
-
-  // If we matched any of the timezone group's children, then set the matched children on the group
-  // and return the group object
-  if (filteredChildren.length) {
-    var modifiedData = $.extend({}, data, true);
-    modifiedData.children = filteredChildren;
-
-    // You can return modified objects from here
-    // This includes matching the `children` how you want in nested data sets
-    return modifiedData;
-  }
-
-  // Return `null` if the term should not be displayed
-  return null;
-}
 
   setTimeout(function(){
      jQuery(function() {
         jQuery( "#form" ).show();
         jQuery( ".date" ).datepicker();
-        jQuery( ".select2" ).select2({
-          // matcher: matchStart
-        });
+        jQuery( ".select2" ).select2();
      });
-    jQuery("#submit_btn").click(function(){
-
+    {% comment %} jQuery("#submit_btn").click(function(){
+      var values;
       jQuery( "input[name=davi_input_text]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_date]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "select[name=davi_products]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_address]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
       jQuery( "input[name=davi_input_state]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).val() );
+        
+          var parentElem = $(this).siblings(),
+              parentTagName = parentElem.get(0).tagName.toLowerCase();
+          
+          if(parentTagName == "label") {
+              label = parentElem;
+          }
+        values += label+': '+$( this ).val() ;
       });
-    });
+    }); {% endcomment %}
     }, 2000);
   
 </script>
