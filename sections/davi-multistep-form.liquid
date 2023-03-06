@@ -19,7 +19,7 @@
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multiplefile" %}
           <input type="file" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_files[]" multiple  >
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "date" %}
-          <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_date" class="date" >
+          <input type="text" oninput="this.className = 'davi-theme date'" class="davi-theme date" name="davi_input_date" class="date" >
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "dropdown" %}
           {% assign dropdown =  block.settings.davi_field_value | split: "," %}
           <select name="davi_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'">
@@ -133,7 +133,7 @@
     </div>
   </div>
   
-  <div style="overflow:auto;">
+  <div style="overflow:auto; margin-top:20px;">
     <div style="float:right;">
       <button type="button" class="davi-theme" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       <button type="button" class="davi-theme" id="nextBtn" onclick="nextPrev(1)">Next</button>
