@@ -1,1 +1,126 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"a99f9569-bcf7-4ba9-ad68-d40ee463a1f6":{"type":"davi-multistep-form","blocks":{"6b05011d-8893-4fec-ad45-d0f5045e2a93":{"type":"davi_field","settings":{"davi_field_label":"Name","davi_field_show":"step1","davi_field_type":"text","davi_field_value":""}},"3d80c722-32dd-4cb0-98d6-9f06c7470446":{"type":"davi_field","settings":{"davi_field_label":"Date of Birth","davi_field_show":"step1","davi_field_type":"date","davi_field_value":""}},"db307497-47d1-49cb-9af0-28451124e0e4":{"type":"davi_field","settings":{"davi_field_label":"Products","davi_field_show":"step1","davi_field_type":"products","davi_field_value":""}},"1e946471-db41-40fa-8e29-5d661ad3f205":{"type":"davi_field","settings":{"davi_field_label":"Address","davi_field_show":"step1","davi_field_type":"address","davi_field_value":""}},"42810aac-4de8-475c-9bcc-6313f993db52":{"type":"davi_field","settings":{"davi_field_label":"Single File","davi_field_show":"step1","davi_field_type":"file","davi_field_value":""}},"b5a92399-3ea9-4a79-b252-26502a4b63cc":{"type":"davi_field","settings":{"davi_field_label":"Multiple File","davi_field_show":"step1","davi_field_type":"multiplefile","davi_field_value":""}},"32522a80-f994-4bb3-8a06-e9326a29decd":{"type":"davi_field","settings":{"davi_field_label":"Only PDF Files","davi_field_show":"step1","davi_field_type":"pdf","davi_field_value":""}},"544faec0-0545-4b8b-b6da-662b652331a7":{"type":"davi_field","settings":{"davi_field_label":"Dropdown","davi_field_show":"step1","davi_field_type":"dropdown","davi_field_value":"html, css, js, react, laravel, php"}},"b439b859-9a7f-4c6d-a50f-c59a1dcf22a8":{"type":"davi_field","settings":{"davi_field_label":"Multiple Dropdown","davi_field_show":"step1","davi_field_type":"multipledropdown","davi_field_value":"html, css, js, react, laravel, php"}}},"block_order":["6b05011d-8893-4fec-ad45-d0f5045e2a93","3d80c722-32dd-4cb0-98d6-9f06c7470446","db307497-47d1-49cb-9af0-28451124e0e4","1e946471-db41-40fa-8e29-5d661ad3f205","42810aac-4de8-475c-9bcc-6313f993db52","b5a92399-3ea9-4a79-b252-26502a4b63cc","32522a80-f994-4bb3-8a06-e9326a29decd","544faec0-0545-4b8b-b6da-662b652331a7","b439b859-9a7f-4c6d-a50f-c59a1dcf22a8"],"settings":{"section_title":"Multistep Form"}}},"order":["main","a99f9569-bcf7-4ba9-ad68-d40ee463a1f6"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "a99f9569-bcf7-4ba9-ad68-d40ee463a1f6": {
+      "type": "davi-multistep-form",
+      "blocks": {
+        "6b05011d-8893-4fec-ad45-d0f5045e2a93": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Name",
+            "davi_field_show": "step1",
+            "davi_field_type": "text",
+            "davi_field_value": ""
+          }
+        },
+        "3d80c722-32dd-4cb0-98d6-9f06c7470446": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Date of Birth",
+            "davi_field_show": "step1",
+            "davi_field_type": "date",
+            "davi_field_value": ""
+          }
+        },
+        "db307497-47d1-49cb-9af0-28451124e0e4": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Products",
+            "davi_field_show": "step1",
+            "davi_field_type": "products",
+            "davi_field_value": ""
+          }
+        },
+        "1e946471-db41-40fa-8e29-5d661ad3f205": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Address",
+            "davi_field_show": "step1",
+            "davi_field_type": "address",
+            "davi_field_value": ""
+          }
+        },
+        "42810aac-4de8-475c-9bcc-6313f993db52": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Single File",
+            "davi_field_show": "step1",
+            "davi_field_type": "file",
+            "davi_field_value": ""
+          }
+        },
+        "b5a92399-3ea9-4a79-b252-26502a4b63cc": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Multiple File",
+            "davi_field_show": "step1",
+            "davi_field_type": "multiplefile",
+            "davi_field_value": ""
+          }
+        },
+        "32522a80-f994-4bb3-8a06-e9326a29decd": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Only PDF Files",
+            "davi_field_show": "step1",
+            "davi_field_type": "pdf",
+            "davi_field_value": ""
+          }
+        },
+        "544faec0-0545-4b8b-b6da-662b652331a7": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Dropdown",
+            "davi_field_show": "step1",
+            "davi_field_type": "dropdown",
+            "davi_field_value": "html, css, js, react, laravel, php"
+          }
+        },
+        "b439b859-9a7f-4c6d-a50f-c59a1dcf22a8": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Multiple Dropdown",
+            "davi_field_show": "step1",
+            "davi_field_type": "multipledropdown",
+            "davi_field_value": "html, css, js, react, laravel, php"
+          }
+        },
+        "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "testing",
+            "davi_field_show": "step1",
+            "davi_field_type": "text",
+            "davi_field_value": "testing"
+          }
+        }
+      },
+      "block_order": [
+        "6b05011d-8893-4fec-ad45-d0f5045e2a93",
+        "3d80c722-32dd-4cb0-98d6-9f06c7470446",
+        "db307497-47d1-49cb-9af0-28451124e0e4",
+        "1e946471-db41-40fa-8e29-5d661ad3f205",
+        "42810aac-4de8-475c-9bcc-6313f993db52",
+        "b5a92399-3ea9-4a79-b252-26502a4b63cc",
+        "32522a80-f994-4bb3-8a06-e9326a29decd",
+        "544faec0-0545-4b8b-b6da-662b652331a7",
+        "b439b859-9a7f-4c6d-a50f-c59a1dcf22a8",
+        "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24"
+      ],
+      "settings": {
+        "section_title": "Multistep Form"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a99f9569-bcf7-4ba9-ad68-d40ee463a1f6"
+  ]
+}
