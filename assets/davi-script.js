@@ -12,79 +12,6 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    var field_settings = {};
-    var values = '';
-    jQuery( "input[name=davi_input_text]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_date]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "select[name=davi_products]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_address]" ).each(function( index ) {
-        label = $(this).prev().prev().text();
-        field_settings[label] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
-        // label = $(this).prev().prev().text();
-        field_settings['Address'] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
-        // label = $(this).prev().prev().text();
-        field_settings['Address'] = $( this ).val();
-    });
-    jQuery( "input[name=davi_input_state]" ).each(function( index ) {
-        // label = $(this).prev().prev().text();
-        field_settings['Address'] = $( this ).val();
-    });
-    for (var key in field_settings) {
-      console.log("key " + key + " has value " + field_settings[key]);
-    }
-    var form_type = $( 'input[name=davi_form_type]' ).val();
-    var shop = $('#shop').val();
-    var data = {
-      shop: shop,
-      form_type: form_type,
-      field_settings: field_settings,
-    };
-    fetch("/apps/sdta/save_form", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-          "Content-Type": "application/json",
-      },
-  })
-  .then(function (response) {
-      return response.json();
-  })
-  .then(function (settings) {
-  });    
-    jQuery('#form_values').html(values)
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
@@ -144,3 +71,82 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+
+$( "#contactForm" ).submit(function( e ) {
+  e.preventDefault();
+
+  var field_settings = {};
+  var values = '';
+  jQuery( "input[name=davi_input_text]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_files]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_date]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "select[name=davi_products]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_address]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
+      // label = $(this).prev().prev().text();
+      field_settings['Address'] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
+      // label = $(this).prev().prev().text();
+      field_settings['Address'] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_state]" ).each(function( index ) {
+      // label = $(this).prev().prev().text();
+      field_settings['Address'] = $( this ).val();
+  });
+  for (var key in field_settings) {
+    console.log("key " + key + " has value " + field_settings[key]);
+  }
+  var form_type = $( 'input[name=davi_form_type]' ).val();
+  var shop = $('#shop').val();
+  var data = {
+    shop: shop,
+    form_type: form_type,
+    field_settings: field_settings,
+  };
+  fetch("/apps/sdta/save_form", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+        "Content-Type": "application/json",
+    },
+})
+.then(function (response) {
+    return response.json();
+})
+.then(function (settings) {
+  location.reload()
+});    
+});
