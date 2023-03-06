@@ -7,7 +7,9 @@
     <form id="contactForm" enctype="multipart/form-data">
     <div class="tab step1" >
     {% for block in section.blocks %}    
-      <label>{{ block.settings.davi_field_label }}</label><br/>
+      {% if block.settings.davi_field_show == 'step1' %}
+        <label>{{ block.settings.davi_field_label }}</label><br/>
+      {% endif %}
       {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
       {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "pdf" %}
@@ -46,7 +48,9 @@
     </div>
     <div class="tab step2" >
       {% for block in section.blocks %}   
-      <label>{{ block.settings.davi_field_label }}</label><br/>
+      {% if block.settings.davi_field_show == 'step2' %}
+        <label>{{ block.settings.davi_field_label }}</label><br/>
+      {% endif %}
       {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
       {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "pdf" %}
@@ -86,7 +90,9 @@
     </div>
     <div class="tab step3" >
       {% for block in section.blocks %}   
-      <label>{{ block.settings.davi_field_label }}</label><br/>
+      {% if block.settings.davi_field_show == 'step1' %}
+        <label>{{ block.settings.davi_field_label }}</label><br/>
+      {% endif %}
       {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "text" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
       {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "pdf" %}
