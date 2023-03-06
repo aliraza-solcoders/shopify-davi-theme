@@ -32,7 +32,7 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    document.getElementById("contactForm").submit();
+    form_submit()
     return false;
   }
   // Otherwise, display the correct tab:
@@ -72,11 +72,9 @@ function fixStepIndicator(n) {
 }
 
 
-$( "#contactForm" ).submit(function( e ) {
-  e.preventDefault();
+function form_submit(){
 
   var field_settings = {};
-  var values = '';
   jQuery( "input[name=davi_input_text]" ).each(function( index ) {
       label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
@@ -136,16 +134,16 @@ $( "#contactForm" ).submit(function( e ) {
     field_settings: field_settings,
   };
   fetch("/apps/sdta/save_form", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-        "Content-Type": "application/json",
-    },
-})
-.then(function (response) {
-    return response.json();
-})
-.then(function (settings) {
-  location.reload()
-});    
-});
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+          "Content-Type": "application/json",
+      },
+  })
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (settings) {
+    location.reload()
+  });    
+};
