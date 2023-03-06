@@ -2,6 +2,9 @@
 .select2-container{
   width: 100% !important;
 }
+select.davi-theme{
+  display: none;
+}
 
 #contactForm {
     background-color: #ffffff;
