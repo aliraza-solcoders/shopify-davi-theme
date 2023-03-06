@@ -13,66 +13,66 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     
-    var values;
+    var values = '';
     jQuery( "input[name=davi_input_text]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_file]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_files]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_date]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "select[name=davi_products]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_address]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery( "input[name=davi_input_state]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
-      values += label+': '+$( this ).val() ;
+      values += label+': '+$( this ).val()+"<br>";
     });
     jQuery('#form_values').html(values)
     document.getElementById("nextBtn").innerHTML = "Submit";
