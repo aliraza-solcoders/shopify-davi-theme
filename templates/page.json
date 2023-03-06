@@ -20,6 +20,15 @@
             "davi_field_value": ""
           }
         },
+        "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "testing",
+            "davi_field_show": "step1",
+            "davi_field_type": "text",
+            "davi_field_value": "testing"
+          }
+        },
         "3d80c722-32dd-4cb0-98d6-9f06c7470446": {
           "type": "davi_field",
           "settings": {
@@ -91,19 +100,11 @@
             "davi_field_type": "multipledropdown",
             "davi_field_value": "html, css, js, react, laravel, php"
           }
-        },
-        "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24": {
-          "type": "davi_field",
-          "settings": {
-            "davi_field_label": "testing",
-            "davi_field_show": "step1",
-            "davi_field_type": "text",
-            "davi_field_value": "testing"
-          }
         }
       },
       "block_order": [
         "6b05011d-8893-4fec-ad45-d0f5045e2a93",
+        "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24",
         "3d80c722-32dd-4cb0-98d6-9f06c7470446",
         "db307497-47d1-49cb-9af0-28451124e0e4",
         "1e946471-db41-40fa-8e29-5d661ad3f205",
@@ -111,8 +112,7 @@
         "b5a92399-3ea9-4a79-b252-26502a4b63cc",
         "32522a80-f994-4bb3-8a06-e9326a29decd",
         "544faec0-0545-4b8b-b6da-662b652331a7",
-        "b439b859-9a7f-4c6d-a50f-c59a1dcf22a8",
-        "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24"
+        "b439b859-9a7f-4c6d-a50f-c59a1dcf22a8"
       ],
       "settings": {
         "section_title": "Multistep Form"
