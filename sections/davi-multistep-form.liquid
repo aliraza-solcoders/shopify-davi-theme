@@ -5,8 +5,8 @@
   <div id="form" style="display:none; padding : 20px;">
     <h2>{{ section.settings.section_title}}</h2>
     <form id="contactForm" enctype="multipart/form-data">
-  {% for block in section.blocks %}    
     <div class="tab step1" >
+    {% for block in section.blocks %}    
       <label>{{ block.settings.davi_field_label }}</label><br/>
       {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
@@ -42,8 +42,10 @@
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
       {% endif %}
+    {% endfor %}
     </div>
     <div class="tab step2" >
+      {% for block in section.blocks %}   
       <label>{{ block.settings.davi_field_label }}</label><br/>
       {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
@@ -79,8 +81,11 @@
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
       {% endif %}
+    {% endfor %}
+      
     </div>
     <div class="tab step3" >
+      {% for block in section.blocks %}   
       <label>{{ block.settings.davi_field_label }}</label><br/>
       {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "text" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_text" >
@@ -116,8 +121,8 @@
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
       {% endif %}
+    {% endfor %}
     </div>
-  {% endfor %}
   
   <div style="overflow:auto;">
     <div style="float:right;">
