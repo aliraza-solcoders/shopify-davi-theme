@@ -1,0 +1,8 @@
+<div class="col-md-4">
+  {{ isFirst }}
+    <h1>{{ content.multistep_form_title }}</h1>
+    <h4>{{ content.multistep_form_sub_title }}</h4>
+    {%- if content.multistep_form_image != blank -%}
+  		<img src="{{ content.multistep_form_image | img_url: "300x" }}" height="200px" width="280px" title="{{content.multistep_form_title}}">
+  	{%- endif -%}
+</div>

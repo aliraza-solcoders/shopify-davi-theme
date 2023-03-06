@@ -1,0 +1,213 @@
+<style>
+  .select2{
+    width: 200px !important;
+  }
+</style>
+  <div class="container davi-customize">
+  <div id="form" style="display:none; padding : 20px;">
+    <h2>{{ section.settings.section_title}}</h2>
+    <form id="form" enctype="multipart/form-data">
+  {% for block in section.blocks %}    
+    <div class="text">   
+      <label>{{ block.settings.davi_field_label }}</label>
+    </div>  
+    {% if block.settings.davi_field_type == "text" %}
+      <input type="text" name="davi_input_text" >
+    {% elsif block.settings.davi_field_type == "pdf" %}
+      <input type="file" name="davi_input_pdf" accept="application/pdf" >
+    {% elsif block.settings.davi_field_type == "file" %}
+      <input type="file" name="davi_input_file" >
+    {% elsif block.settings.davi_field_type == "multiplefile" %}
+      <input type="file" name="davi_input_files[]" multiple  >
+    {% elsif block.settings.davi_field_type == "date" %}
+      <input type="text" name="davi_input_date" class="date" >
+    {% elsif block.settings.davi_field_type == "dropdown" %}
+      {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+      <select name="davi_dropdown" class="form-control select2">
+        {% for option in dropdown %}
+          <option>{{ option }}</option>
+        {% endfor %}
+      </select>
+    {% elsif block.settings.davi_field_type == "multipledropdown" %}
+      {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+      <select name="davi_multiple_dropdown" class="form-control select2" multiple>
+        {% for option in dropdown %}
+          <option>{{ option }}</option>
+        {% endfor %}
+      </select>
+    {% elsif block.settings.davi_field_type == "products" %}
+      <select multiple class="form-control select2">
+        {% for product in collections['all'].products %}
+            <option title="{{ product.sku }}">{{ product.title }}</option>
+        {% endfor %}
+      </select>
+    {% elsif block.settings.davi_field_type == "address" %}
+      <input type="text" name="davi_input_address" placeholder="address" ><br>
+      <input type="text" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" name="davi_input_state" placeholder="state" >
+    {% else %}
+    {% endif %}
+  {% endfor %}
+  <button id="submit_btn" class="btn--secondary">Submit</button>
+  </form>
+  </div>
+  </div>
+{% schema %}
+  {
+    "name": "Davi Multistep Form",
+	"class": "container mx-auto",
+	"tag": "section",
+	"settings": [{
+		"id": "section_title",
+        "type": "text",
+        "label": "Section Header",
+		"default": "Multistep Form"
+	}],
+  "blocks": [
+    {
+      "type": "davi_field",
+      "name": "Davi Field",
+      "settings": [
+        {
+          "id": "davi_field_label",
+          "type": "text",
+          "label": "Field Label"
+        },
+        {
+          "type": "select",
+          "id": "davi_field_show",
+          "label": "Field Show on",
+          "options": [
+            {
+              "value": "step1",
+              "label": "Step 1"
+            },
+            {
+              "value": "step2",
+              "label": "Step 2"
+            },
+            {
+              "value": "step3",
+              "label": "Step 3"
+            }
+          ],
+          "default": "step1"
+        },        
+        {
+          "type": "select",
+          "id": "davi_field_type",
+          "label": "Field Type",
+          "options": [
+            {
+              "value": "text",
+              "label": "Text"
+            },
+            {
+              "value": "date",
+              "label": "Datepicker"
+            },
+            {
+              "value": "products",
+              "label": "Products"
+            },
+            {
+              "value": "pdf",
+              "label": "PDF"
+            },
+            {
+              "value": "file",
+              "label": "File"
+            },
+            {
+              "value": "multiplefile",
+              "label": "Multiple Files"
+            },
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            },
+            {
+              "value": "multipledropdown",
+              "label": "Multiple Dropdown"
+            },
+            {
+              "value": "address",
+              "label": "Address"
+            }
+          ],
+          "default": "text"
+        },
+        
+        {
+          "id": "davi_field_value",
+          "type": "text",
+          "label": "Field Value (for comma seprated)"
+        }
+        
+      ]
+    }
+    ],
+	"presets": [
+      {
+        "name": "Davi Multi Step Form",
+        "category": "Forms"
+      }
+    ]
+    
+  }
+{% endschema %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" defer></script>
+<!-- Javascript -->
+<script>
+  function matchStart(params, data) {
+    
+  // If there are no search terms, return all of the data
+  if ($.trim(params.term) === '') {
+    return data;
+  }
+
+  // Skip if there is no 'children' property
+  // if (typeof data.children === 'undefined') {
+  //   return null;
+  // }
+
+  // `data.children` contains the actual options that we are matching against
+  var filteredChildren = [];
+  $.each(data.children, function (idx, child) {
+    if (child.text.toUpperCase().indexOf(params.term.toUpperCase()) == 0) {
+      filteredChildren.push(child);
+    }
+  });
+
+  // If we matched any of the timezone group's children, then set the matched children on the group
+  // and return the group object
+  if (filteredChildren.length) {
+    var modifiedData = $.extend({}, data, true);
+    modifiedData.children = filteredChildren;
+
+    // You can return modified objects from here
+    // This includes matching the `children` how you want in nested data sets
+    return modifiedData;
+  }
+
+  // Return `null` if the term should not be displayed
+  return null;
+}
+
+  setTimeout(function(){
+     jQuery(function() {
+        jQuery( "#form" ).show();
+        jQuery( ".date" ).datepicker();
+        jQuery( ".select2" ).select2({
+          // matcher: matchStart
+        });
+     });
+    jQuery("#submit_btn").click(function(){
+        consoloe.log(jQuery( "input[name=davi_input_text]" ).val());
+    });
+    }, 2000);
+  
+</script>
+</div>
