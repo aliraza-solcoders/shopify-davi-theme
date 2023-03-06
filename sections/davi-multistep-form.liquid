@@ -26,20 +26,20 @@
           {% for option in dropdown %}
             <option>{{ option }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multipledropdown" %}
         {% assign dropdown =  block.settings.davi_field_value | split: "," %}
         <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
           {% for option in dropdown %}
             <option>{{ option }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "products" %}
         <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
           {% for product in collections['all'].products %}
               <option title="{{ product.sku }}">{{ product.title }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "address" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
@@ -67,20 +67,20 @@
           {% for option in dropdown %}
             <option>{{ option }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multipledropdown" %}
         {% assign dropdown =  block.settings.davi_field_value | split: "," %}
         <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
           {% for option in dropdown %}
             <option>{{ option }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "products" %}
         <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
           {% for product in collections['all'].products %}
               <option title="{{ product.sku }}">{{ product.title }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
@@ -109,20 +109,20 @@
           {% for option in dropdown %}
             <option>{{ option }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "multipledropdown" %}
         {% assign dropdown =  block.settings.davi_field_value | split: "," %}
         <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
           {% for option in dropdown %}
             <option>{{ option }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "products" %}
         <select name="davi_products" class="form-control select2 davi-theme" onchange="this.className = 'davi-theme'" multiple>
           {% for product in collections['all'].products %}
               <option title="{{ product.sku }}">{{ product.title }}</option>
           {% endfor %}
-        </select>
+        </select><br>
       {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "address" %}
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_address" placeholder="address" ><br>
         <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_appartment_no" placeholder="appartment_no" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" oninput="this.className = 'davi-theme'" class="davi-theme" name="davi_input_state" placeholder="state" >
