@@ -36,7 +36,7 @@
         {% endfor %}
       </select>
     {% elsif block.settings.davi_field_type == "products" %}
-      <select multiple class="form-control select2">
+      <select multiple class="form-control select2" name="davi_products">
         {% for product in collections['all'].products %}
             <option title="{{ product.sku }}">{{ product.title }}</option>
         {% endfor %}
@@ -47,13 +47,14 @@
     {% else %}
     {% endif %}
   {% endfor %}
+  <br>
   <button type="button" id="submit_btn" class="btn--secondary">Submit</button>
   </form>
   </div>
   </div>
 {% schema %}
   {
-    "name": "Davi Multistep Form",
+  "name": "Davi Multistep Form",
 	"class": "container mx-auto",
 	"tag": "section",
 	"settings": [{
@@ -207,7 +208,40 @@
     jQuery("#submit_btn").click(function(){
 
       jQuery( "input[name=davi_input_text]" ).each(function( index ) {
-        console.log( index + ": " + $( this ).text() );
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_files]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_date]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "select[name=davi_products]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_address]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
+      });
+      jQuery( "input[name=davi_input_state]" ).each(function( index ) {
+        console.log( index + ": " + $( this ).val() );
       });
     });
     }, 2000);
