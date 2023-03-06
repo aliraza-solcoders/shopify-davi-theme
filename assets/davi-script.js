@@ -20,7 +20,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -30,7 +30,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -40,7 +40,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -50,7 +50,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -60,7 +60,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -70,7 +70,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -80,7 +80,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -90,7 +90,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -100,7 +100,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -110,7 +110,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -120,7 +120,7 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
@@ -130,11 +130,11 @@ function showTab(n) {
             parentTagName = parentElem.get(0).tagName.toLowerCase();
         
         if(parentTagName == "label") {
-            label = parentElem;
+            label = parentElem.get(0).html();
         }
       values += label+': '+$( this ).val() ;
     });
-    jQuery('#form_values').html(values);
+    jQuery('#form_values').html(values)
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
