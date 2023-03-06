@@ -29,7 +29,7 @@ function showTab(n) {
         
       values += label+': '+$( this ).val()+"<br>";
     });
-    jQuery( "input[name=davi_input_files[]]" ).each(function( index ) {
+    jQuery( "input[name=davi_input_files]" ).each(function( index ) {
         label = $(this).prev().prev().text();
         
       values += label+': '+$( this ).val()+"<br>";
