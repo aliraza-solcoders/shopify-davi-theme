@@ -141,20 +141,19 @@ function form_submit(){
       return response.json();
   })
   .then(function (settings) {
-    location.reload()
-  });    
-  var formData = new FormData('#contactForm');
-  fetch("/apps/sdta/file_upload", {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-          "Content-Type": "application/json",
-      },
-  })
-  .then(function (response) {
-      return response.json();
-  })
-  .then(function (settings) {
-    location.reload()
-  });    
+      var formData = new FormData('#contactForm');
+      fetch("/apps/sdta/file_upload", {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+              "Content-Type": "application/json",
+          },
+      })
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (settings) {
+        location.reload()
+      });
+  });       
 };
