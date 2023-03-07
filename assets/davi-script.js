@@ -123,11 +123,35 @@ function form_submit(){
   for (var key in field_settings) {
     console.log("key " + key + " has value " + field_settings[key]);
   }
+  var input = document.querySelector('input[type="file"]')
+
+  jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  jQuery( "input[name=davi_input_files]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
+  var data = new FormData()
   
-  var formData = new FormData('#contactForm');
+  jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+    data.append('davi_input_pdf', input.files[index])
+  });
+  jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+    data.append('davi_input_file', input.files[index])
+  });
+  jQuery( "input[name=davi_input_files]" ).each(function( index ) {
+    data.append('davi_input_files', input.files[index])
+  });
+  
   fetch("/apps/sdta/file_upload", {
       method: "POST",
-      body: JSON.stringify(formData),
+      body: JSON.stringify(data),
       headers: {
           "Content-Type": "application/json",
       },
