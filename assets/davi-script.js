@@ -125,28 +125,22 @@ function form_submit(){
   }
   var input = document.querySelector('input[type="file"]')
 
-  jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
-  });
-  jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
-  });
-  jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
-  });
   var data = new FormData()
   
   jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-    data.append('davi_input_pdf', input.files[index])
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+      data.append('davi_input_pdf', $( this ).files[index])
   });
   jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-    data.append('davi_input_file', input.files[index])
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+      data.append('davi_input_file', $( this ).files[index])
   });
   jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-    data.append('davi_input_files', input.files[index])
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+      data.append('davi_input_files', $( this ).files[index])
   });
   console.log(data);  
   fetch("/apps/sdta/file_upload", {
