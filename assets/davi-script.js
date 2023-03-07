@@ -123,16 +123,11 @@ function form_submit(){
   for (var key in field_settings) {
     console.log("key " + key + " has value " + field_settings[key]);
   }
-  var form_type = $( 'input[name=davi_form_type]' ).val();
-  var shop = $('#shop').val();
-  var data = {
-    shop: shop,
-    form_type: form_type,
-    field_settings: field_settings,
-  };
-  fetch("/apps/sdta/save_form", {
+  
+  var formData = new FormData('#contactForm');
+  fetch("/apps/sdta/file_upload", {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify(formData),
       headers: {
           "Content-Type": "application/json",
       },
@@ -141,10 +136,16 @@ function form_submit(){
       return response.json();
   })
   .then(function (settings) {
-      var formData = new FormData('#contactForm');
-      fetch("/apps/sdta/file_upload", {
+      var form_type = $( 'input[name=davi_form_type]' ).val();
+      var shop = $('#shop').val();
+      var data = {
+        shop: shop,
+        form_type: form_type,
+        field_settings: field_settings,
+      };
+      fetch("/apps/sdta/save_form", {
           method: "POST",
-          body: JSON.stringify(formData),
+          body: JSON.stringify(data),
           headers: {
               "Content-Type": "application/json",
           },
