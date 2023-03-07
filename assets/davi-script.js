@@ -148,7 +148,7 @@ function form_submit(){
   jQuery( "input[name=davi_input_files]" ).each(function( index ) {
     data.append('davi_input_files', input.files[index])
   });
-  
+  console.log(data);  
   fetch("/apps/sdta/file_upload", {
       method: "POST",
       body: JSON.stringify(data),
