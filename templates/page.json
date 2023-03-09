@@ -64,6 +64,15 @@
             "davi_field_type": "products",
             "davi_field_value": ""
           }
+        },
+        "86c46012-fdb4-40b4-9164-288314d87dcf": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Phone Number",
+            "davi_field_show": "step3",
+            "davi_field_type": "text",
+            "davi_field_value": ""
+          }
         }
       },
       "block_order": [
@@ -72,7 +81,8 @@
         "3d80c722-32dd-4cb0-98d6-9f06c7470446",
         "1e946471-db41-40fa-8e29-5d661ad3f205",
         "d248a957-a2c5-459b-85b8-bb3277475a80",
-        "57549ed9-2ba6-472d-9617-7863237ffe02"
+        "57549ed9-2ba6-472d-9617-7863237ffe02",
+        "86c46012-fdb4-40b4-9164-288314d87dcf"
       ],
       "settings": {
         "section_title": "Custom Contact Form"
