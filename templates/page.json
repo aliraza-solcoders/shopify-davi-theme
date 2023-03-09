@@ -14,7 +14,7 @@
         "6b05011d-8893-4fec-ad45-d0f5045e2a93": {
           "type": "davi_field",
           "settings": {
-            "davi_field_label": "Name",
+            "davi_field_label": "First Name",
             "davi_field_show": "step1",
             "davi_field_type": "text",
             "davi_field_value": ""
@@ -23,27 +23,18 @@
         "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24": {
           "type": "davi_field",
           "settings": {
-            "davi_field_label": "testing",
-            "davi_field_show": "step2",
+            "davi_field_label": "Last Name",
+            "davi_field_show": "step1",
             "davi_field_type": "text",
-            "davi_field_value": "testing"
+            "davi_field_value": ""
           }
         },
         "3d80c722-32dd-4cb0-98d6-9f06c7470446": {
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Date of Birth",
-            "davi_field_show": "step3",
-            "davi_field_type": "date",
-            "davi_field_value": ""
-          }
-        },
-        "db307497-47d1-49cb-9af0-28451124e0e4": {
-          "type": "davi_field",
-          "settings": {
-            "davi_field_label": "Products",
             "davi_field_show": "step1",
-            "davi_field_type": "products",
+            "davi_field_type": "date",
             "davi_field_value": ""
           }
         },
@@ -51,7 +42,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Address",
-            "davi_field_show": "step2",
+            "davi_field_show": "step1",
             "davi_field_type": "address",
             "davi_field_value": ""
           }
@@ -106,7 +97,6 @@
         "6b05011d-8893-4fec-ad45-d0f5045e2a93",
         "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24",
         "3d80c722-32dd-4cb0-98d6-9f06c7470446",
-        "db307497-47d1-49cb-9af0-28451124e0e4",
         "1e946471-db41-40fa-8e29-5d661ad3f205",
         "42810aac-4de8-475c-9bcc-6313f993db52",
         "b5a92399-3ea9-4a79-b252-26502a4b63cc",
