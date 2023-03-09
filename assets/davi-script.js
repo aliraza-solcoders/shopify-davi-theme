@@ -24,7 +24,7 @@ function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
+  // if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -50,12 +50,6 @@ function validateForm() {
     if (y[i].value == "") {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
-      // and set the current valid status to false
-      valid = false;
-    // } else if (y[i].type == "email" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(y[i].value)) {
-
-      // add an "invalid" class to the field:
-      // y[i].className += " invalid";
       // and set the current valid status to false
       valid = false;
     } 
