@@ -47,15 +47,15 @@ function validateForm() {
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "" && y[i].type != "email") {
+    if (y[i].value == "") {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
       // and set the current valid status to false
       valid = false;
-    } else if (y[i].type == "email" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(y[i].value)) {
+    // } else if (y[i].type == "email" && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(y[i].value)) {
 
       // add an "invalid" class to the field:
-      y[i].className += " invalid";
+      // y[i].className += " invalid";
       // and set the current valid status to false
       valid = false;
     } 
