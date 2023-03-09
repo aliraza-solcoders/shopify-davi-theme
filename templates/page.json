@@ -42,7 +42,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Address",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "address",
             "davi_field_value": ""
           }
