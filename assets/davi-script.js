@@ -112,13 +112,13 @@ function form_submit(){
       field_settings[label] = $( this ).val();
   });
   jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) { 
-      field_settings[label] = $( this ).val();
+      field_settings[label] += $( this ).val();
   });
   jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {  
-      field_settings[label] = $( this ).val();
+      field_settings[label] += $( this ).val();
   });
   jQuery( "input[name=davi_input_state]" ).each(function( index ) { 
-      field_settings[label] = $( this ).val();
+      field_settings[label] += $( this ).val();
   });
   // for (var key in field_settings) {
   //   console.log("key " + key + " has value " + field_settings[key]);
