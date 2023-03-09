@@ -24,7 +24,7 @@ function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  // if (n == 1 && !validateForm()) return false;
+  if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -120,40 +120,37 @@ function form_submit(){
   jQuery( "input[name=davi_input_state]" ).each(function( index ) { 
       field_settings[label] = $( this ).val();
   });
-  for (var key in field_settings) {
-    console.log("key " + key + " has value " + field_settings[key]);
-  }
-  var input = document.querySelector('input[type="file"]')
-
-  var data = new FormData()
-  
+  // for (var key in field_settings) {
+  //   console.log("key " + key + " has value " + field_settings[key]);
+  // }
+  // var data = new FormData()
   jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
       label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
-      data.append('davi_input_pdf', $( this ).files[index])
+      // data.append('davi_input_pdf', $( this ).files[index])
   });
   jQuery( "input[name=davi_input_file]" ).each(function( index ) {
       label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
-      data.append('davi_input_file', $( this ).files[index])
+      // data.append('davi_input_file', $( this ).files[index])
   });
   jQuery( "input[name=davi_input_files]" ).each(function( index ) {
       label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
-      data.append('davi_input_files', $( this ).files[index])
+      // data.append('davi_input_files', $( this ).files[index])
   });
-  console.log(data);  
-  fetch("/apps/sdta/file_upload", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-          "Content-Type": "application/json",
-      },
-  })
-  .then(function (response) {
-      return response.json();
-  })
-  .then(function (settings) {
+  // console.log(data);  
+  // fetch("/apps/sdta/file_upload", {
+  //     method: "POST",
+  //     body: JSON.stringify(data),
+  //     headers: {
+  //         "Content-Type": "application/json",
+  //     },
+  // })
+  // .then(function (response) {
+  //     return response.json();
+  // })
+  // .then(function (settings) {
       var form_type = $( 'input[name=davi_form_type]' ).val();
       var shop = $('#shop').val();
       var data = {
@@ -174,5 +171,5 @@ function form_submit(){
       .then(function (settings) {
         location.reload()
       });
-  });       
+  // });       
 };
