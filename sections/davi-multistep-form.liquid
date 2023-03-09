@@ -12,6 +12,8 @@
         {% endif %}
         {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
           <input type="text" class="davi-theme" name="davi_input_text" >
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "email" %}
+          <input type="email" class="davi-theme" name="davi_input_email" >
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "pdf" %}
           <input type="file" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "file" %}
@@ -53,6 +55,8 @@
         {% endif %}
         {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
           <input type="text" class="davi-theme" name="davi_input_text" >
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "email" %}
+          <input type="email" class="davi-theme" name="davi_input_email" >
         {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "pdf" %}
           <input type="file" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
         {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "file" %}
@@ -94,6 +98,8 @@
         {% endif %}
         {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "text" %}
           <input type="text" class="davi-theme" name="davi_input_text" >
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "email" %}
+          <input type="email" class="davi-theme" name="davi_input_email" >
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "pdf" %}
           <input type="file" class="davi-theme" name="davi_input_pdf" accept="application/pdf" >
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "file" %}
@@ -193,6 +199,10 @@
             {
               "value": "text",
               "label": "Text"
+            },
+            {
+              "value": "email",
+              "label": "Email"
             },
             {
               "value": "date",
