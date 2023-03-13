@@ -40,16 +40,16 @@
                 <strong>Notice:</strong> If there is more than 10% change in material prices after the quote is provided, it loses its validity. See our policy</p>
                 <div class="col-md-6 bg-light">
                     <div class="row">
-                        <div class="col-md-12 p-3"><strong>Quote Details</strong></div>
+                        <div class="col-md-12 p-3 quotation_detail"><strong>Quote Details</strong></div>
                         <div class="col-md-6 p-3"><strong>Material</strong></div><div class="col-md-6 p-3">14K Gold</div>
                         <div class="col-md-6 p-3"><strong>Plating</strong></div><div class="col-md-6 p-3">XXX</div>
+                        {% comment %} <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
                         <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
                         <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
                         <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
                         <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
                         <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
+                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-md-6 p-3">
@@ -99,6 +99,11 @@
                 var formData = jQuery.parseJSON(response.field_settings);
                 console.log(response.field_settings);
                 console.log(formData);
+                var html = "";
+                $(formData).each(function( index, value ) {
+                    html += '<div class="col-md-6 p-3"><strong>'+index+'</strong></div><div class="col-md-6 p-3">'+value+'</div>';
+                });
+                jQuery(".quotation_detail").append(html);
                 jQuery("#ref_number").html(response.referrence_number);
                 jQuery("#quotation_status").html(response.status);
                 jQuery("#total_price").html(response.price);
