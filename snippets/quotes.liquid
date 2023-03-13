@@ -1,3 +1,4 @@
+
 <div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}"></div>
 
 <table id="quotes_table" style="display:none">
@@ -16,6 +17,8 @@
 
 </table>
 <script>
+  setTimeout(function(){
+
 console.log(jQuery('#davi_theme').attr('data-customer_email'));
 var shop = jQuery('#davi_theme').attr('data-shop');
 var customer_email = jQuery('#davi_theme').attr('data-customer_email');
@@ -39,4 +42,6 @@ fetch("/apps/sdta/get_quotes", {
     jQuery("#quotes").html(response);
     jQuery("#quotes_table").show();
 })
+}, 2000);
+
 </script>
