@@ -74,72 +74,117 @@ function fixStepIndicator(n) {
 
 function form_submit(){
 
-  var field_settings = {};
+  var field_settings = [];
   jQuery( "input[name=davi_input_text]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_input_text = {};
+    davi_input_text['label'] = label;
+    davi_input_text['type'] = 'text';
+    davi_input_text['value'] = $( this ).val();
+    field_settings.push(davi_input_text);
+
   });
   jQuery( "input[name=davi_input_email]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_input_email = {};
+    davi_input_email['label'] = label;
+    davi_input_email['type'] = 'text';
+    davi_input_email['value'] = $( this ).val();
+    field_settings.push(davi_input_email);
   });
   jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_input_pdf = {};
+    davi_input_pdf['label'] = label;
+    davi_input_pdf['type'] = 'file';
+    davi_input_pdf['value'] = $( this ).val();
+    field_settings.push(davi_input_pdf);
   });
   jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_input_file = {};
+    davi_input_file['label'] = label;
+    davi_input_file['type'] = 'file';
+    davi_input_file['value'] = $( this ).val();
+    field_settings.push(davi_input_file);
   });
   jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_input_files = {};
+    davi_input_files['label'] = label;
+    davi_input_files['type'] = 'file';
+    davi_input_files['value'] = $( this ).val();
+    field_settings.push(davi_input_files);
   });
   jQuery( "input[name=davi_input_date]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_input_date = {};
+    davi_input_date['label'] = label;
+    davi_input_date['type'] = 'text';
+    davi_input_date['value'] = $( this ).val();
+    field_settings.push(davi_input_date);
   });
   jQuery( "select[name=davi_products]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_products = {};
+    davi_products['label'] = label;
+    davi_products['type'] = 'select';
+    davi_products['value'] = $( this ).val();
+    field_settings.push(davi_products);
   });
   jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+    label = $(this).prev().prev().text();
+    var davi_dropdown = {};
+    davi_dropdown['label'] = label;
+    davi_dropdown['type'] = 'select';
+    davi_dropdown['value'] = $( this ).val();
+    field_settings.push(davi_dropdown);
   });
-  jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+  jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {davi_multiple_dropdown = {};
+    label = $(this).prev().prev().text();
+    var davi_multiple_dropdown = {};
+    davi_multiple_dropdown['label'] = label;
+    davi_multiple_dropdown['type'] = 'select';
+    davi_multiple_dropdown['value'] = $( this ).val();
+    field_settings.push(davi_multiple_dropdown);
   });
-  jQuery( "input[name=davi_input_address]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
+  jQuery( "input[name=davi_input_address]" ).each(function( index ) {davi_input_address = {};
+    label = $(this).prev().prev().text();
+    var davi_input_address = {};
+    davi_input_address['label'] = label;
+    davi_input_address['type'] = 'text';
+    davi_input_address['value'] = $( this ).val();
   });
-  jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) { 
-      field_settings[label] += $( this ).val();
+  jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) { davi_input_appartment_no = {};
+      davi_input_address['value'] += $( this ).val();
   });
-  jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {  
-      field_settings[label] += $( this ).val();
+  jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {  davi_input_zip_code = {};
+      davi_input_address['value'] += $( this ).val();
   });
-  jQuery( "input[name=davi_input_state]" ).each(function( index ) { 
-      field_settings[label] += $( this ).val();
+  jQuery( "input[name=davi_input_state]" ).each(function( index ) { davi_input_state = {};
+      davi_input_address['value'] += $( this ).val();
   });
+  field_settings.push(davi_input_address);
+
   // for (var key in field_settings) {
   //   console.log("key " + key + " has value " + field_settings[key]);
   // }
   // var data = new FormData()
   jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
+    var davi_input_pdf = {};
+    label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
       // data.append('davi_input_pdf', $( this ).files[index])
   });
   jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
+    var davi_input_file = {};
+    label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
       // data.append('davi_input_file', $( this ).files[index])
   });
   jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-      label = $(this).prev().prev().text();
+    var davi_input_files = {};
+    label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
       // data.append('davi_input_files', $( this ).files[index])
   });
