@@ -53,8 +53,18 @@
                     </div>
                 </div>
                 <div class="col-md-6 p-3">
-                    <h5>What are the payment options?</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque velit enim laborum dolor? Corrupti sapiente rerum odit voluptates, iste ipsa recusandae totam perferendis harum nostrum sint, voluptate et quisquam explicabo.</p>
+                    <div class="row">
+                        <div class="col-md-12 mb-5">
+                            <h5>What are the payment options?</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque velit enim laborum dolor? Corrupti sapiente rerum odit voluptates, iste ipsa recusandae totam perferendis harum nostrum sint, voluptate et quisquam explicabo.</p>
+                        </div>
+                        <div class="col-md-12 bg-light mt-5 ">
+                            <div class="row">
+                                <div class="col-md-12 p-3 files"><strong>File Uploaded</strong></div>
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-12 bg-light mt-4">
                     <div class="row">
@@ -97,15 +107,23 @@
             .then(function (response) {
                 console.log(response);
                 {% comment %} var formData = jQuery.parseJSON(response.field_settings); {% endcomment %}
-                console.log(response.field_settings);
-                console.log(formData);
+                {% comment %} console.log(response.field_settings); {% endcomment %}
+                {% comment %} console.log(formData); {% endcomment %}
                 var html = "";
-                $(formData).each(function( key, value ) {
+                var file = "";
+                const formData = JSON.parse(response.field_settings);
 
-                    console.log(value);
-                    html += '<div class="col-md-6 p-3"><strong>'+key+'</strong></div><div class="col-md-6 p-3">'+value+'</div>';
+                $(formData).each(function( key, value ) {
+                    if(value.type != "file"){
+                        html += '<div class="col-md-6 p-3"><strong>'+value.label+'</strong></div><div class="col-md-6 p-3">'+value.value+'</div>';
+                    }
+                    else{
+                        file += '<div class="col-md-6 p-3"><strong>'+value.label+'</strong></div><div class="col-md-6 p-3">'+value.value+'</div>';
+
+                    }
                 });
                 jQuery(".quotation_detail").append(html);
+                jQuery(".files").append(file);
                 jQuery("#ref_number").html(response.referrence_number);
                 jQuery("#quotation_status").html(response.status);
                 jQuery("#total_price").html(response.price);
