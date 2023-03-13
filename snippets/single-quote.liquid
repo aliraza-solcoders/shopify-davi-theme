@@ -122,8 +122,8 @@
 
                     }
                 });
-                jQuery(".quotation_detail").append(html);
-                jQuery(".files").append(file);
+                jQuery(".quotation_detail").after(html);
+                jQuery(".files").after(file);
                 jQuery("#ref_number").html(response.referrence_number);
                 jQuery("#quotation_status").html(response.status);
                 jQuery("#total_price").html(response.price);
