@@ -96,6 +96,9 @@
             })
             .then(function (response) {
                 console.log(response);
+                var formData = jQuery.parseJSON(response.field_settings);
+                console.log(response.field_settings);
+                console.log(formData);
                 jQuery("#ref_number").html(response.referrence_number);
                 jQuery("#quotation_status").html(response.status);
                 jQuery("#total_price").html(response.price);
