@@ -96,13 +96,14 @@
             })
             .then(function (response) {
                 console.log(response);
-                var formData = jQuery.parseJSON(response.field_settings);
+                {% comment %} var formData = jQuery.parseJSON(response.field_settings); {% endcomment %}
                 console.log(response.field_settings);
                 console.log(formData);
                 var html = "";
-                $(formData).each(function( index, value ) {
+                $(formData).each(function( key, value ) {
+
                     console.log(value);
-                    html += '<div class="col-md-6 p-3"><strong>'+index+'</strong></div><div class="col-md-6 p-3">'+value+'</div>';
+                    html += '<div class="col-md-6 p-3"><strong>'+key+'</strong></div><div class="col-md-6 p-3">'+value+'</div>';
                 });
                 jQuery(".quotation_detail").append(html);
                 jQuery("#ref_number").html(response.referrence_number);
