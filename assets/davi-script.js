@@ -173,7 +173,7 @@ function form_submit(){
           return response.json();
       })
       .then(function (settings) {
-        location.reload()
+        window.location.href = window.location.host+'/pages/quotes';
       });
   // });       
 };
