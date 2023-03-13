@@ -101,6 +101,7 @@
                 console.log(formData);
                 var html = "";
                 $(formData).each(function( index, value ) {
+                    console.log(value);
                     html += '<div class="col-md-6 p-3"><strong>'+index+'</strong></div><div class="col-md-6 p-3">'+value+'</div>';
                 });
                 jQuery(".quotation_detail").append(html);
