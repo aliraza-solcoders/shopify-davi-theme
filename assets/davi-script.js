@@ -79,6 +79,10 @@ function form_submit(){
       label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
   });
+  jQuery( "input[name=davi_input_email]" ).each(function( index ) {
+      label = $(this).prev().prev().text();
+      field_settings[label] = $( this ).val();
+  });
   jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
       label = $(this).prev().prev().text();
       field_settings[label] = $( this ).val();
