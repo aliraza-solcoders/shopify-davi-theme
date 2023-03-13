@@ -148,9 +148,9 @@ function form_submit(){
     davi_multiple_dropdown['value'] = $( this ).val();
     field_settings.push(davi_multiple_dropdown);
   });
+  var davi_input_address = {};
   jQuery( "input[name=davi_input_address]" ).each(function( index ) {davi_input_address = {};
     label = $(this).prev().prev().text();
-    var davi_input_address = {};
     davi_input_address['label'] = label;
     davi_input_address['type'] = 'text';
     davi_input_address['value'] = $( this ).val();
