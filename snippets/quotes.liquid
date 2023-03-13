@@ -1,4 +1,10 @@
-<div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}"></div>
+<style>
+#davi_theme{
+margin: 0px auto;
+padding: 20px;
+}
+</style>
+<div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}">
 <table id="quotes_table" style="display:none">
 <tr>
     <th>S. no.</th>
@@ -14,6 +20,7 @@
 </tbody>
 
 </table>
+</div>
 <script>
   setTimeout(function(){
 
