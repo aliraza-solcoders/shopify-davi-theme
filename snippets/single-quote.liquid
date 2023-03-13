@@ -96,7 +96,9 @@
             })
             .then(function (response) {
                 console.log(response);
-                jQuery("#ref_number").html(response.status);
+                jQuery("#ref_number").html(response.referrence_number);
+                jQuery("#quotation_status").html(response.status);
+                jQuery("#total_price").html(response.price);
                 jQuery("#single-quotation").show();
             })
       }
