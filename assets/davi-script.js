@@ -228,14 +228,6 @@ function form_submit(){
     .catch(error => {
       console.error(error);
     });
-  });
-
-
-
-
-
-
-
   // console.log(data);  
   // fetch("/apps/sdta/file_upload", {
   //     method: "POST",
@@ -268,5 +260,5 @@ function form_submit(){
       .then(function (settings) {
         window.location = 'https://'+window.location.host+'/pages/quotes';
       });
-  // });       
+  });       
 };
