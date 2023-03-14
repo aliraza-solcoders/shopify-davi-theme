@@ -49,12 +49,15 @@ fetch("/apps/sdta/get_quotes", {
     return response.json();
 })
 .then(function (response) {
-    console.log(response);
     jQuery("#quotes").html(response);
-    jQuery("#quotes_table").show();
-    
     setTimeout(function(){
-        jQuery("#quotes_table").DataTable();
+        jQuery("#quotes_table").show();
+        jQuery("#quotes_table").DataTable({
+            "ordering": false,
+            "lengthChange": false,
+            "sorting": false
+
+        });
     }, 2000);
 })
 }, 2000);
