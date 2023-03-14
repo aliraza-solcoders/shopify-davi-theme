@@ -51,7 +51,10 @@ fetch("/apps/sdta/get_quotes", {
     console.log(response);
     jQuery("#quotes").html(response);
     jQuery("#quotes_table").show();
-    jQuery("#quotes_table").datatable();
+    
+    setTimeout(function(){
+        jQuery("#quotes_table").DataTable();
+    }, 2000);
 })
 }, 2000);
 
