@@ -211,6 +211,7 @@ function form_submit(){
     const formData = new FormData();
     formData.append('file', file);
 
+    var shop = $('#shop').val();
     fetch('https://'+shop+'/admin/api/'+settings.api_version+'/assets.json', {
       method: 'POST',
       headers: {
