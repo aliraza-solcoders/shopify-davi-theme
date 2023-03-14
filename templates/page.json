@@ -82,6 +82,15 @@
             "davi_field_type": "email",
             "davi_field_value": ""
           }
+        },
+        "1cf96a47-b5cd-4319-850f-0c8fcddf1070": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "PDF File",
+            "davi_field_show": "step1",
+            "davi_field_type": "pdf",
+            "davi_field_value": ""
+          }
         }
       },
       "block_order": [
@@ -92,7 +101,8 @@
         "d248a957-a2c5-459b-85b8-bb3277475a80",
         "57549ed9-2ba6-472d-9617-7863237ffe02",
         "86c46012-fdb4-40b4-9164-288314d87dcf",
-        "d2857725-dff3-405d-9e65-df0079f05d1b"
+        "d2857725-dff3-405d-9e65-df0079f05d1b",
+        "1cf96a47-b5cd-4319-850f-0c8fcddf1070"
       ],
       "settings": {
         "section_title": "Custom Contact Form"
