@@ -190,29 +190,44 @@ function form_submit(){
   });
 
 
-  const fileInput = document.querySelector('input[type="file"]');
-
-  const file = fileInput.files[0];
-
-  const formData = new FormData();
-  formData.append('file', file);
-
-  fetch('https://your-store.myshopify.com/admin/api/2021-09/assets.json', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      'X-Shopify-Access-Token': 'your-access-token',
-      'X-Shopify-API-Version': '2021-09',
-      'X-Shopify-API-Key': 'your-api-key'
-    },
-    body: formData
+  var shop = $('#shop').val();
+  var data = {
+    shop: shop,
+  };
+  fetch("/apps/sdta/get_setttings", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+          "Content-Type": "application/json",
+      },
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
+  .then(function (response) {
+      return response.json();
   })
-  .catch(error => {
-    console.error(error);
+  .then(function (settings) {
+    console.log(settings);
+    const fileInput = document.querySelector('input[type="file"]');
+    const file = fileInput.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+
+    fetch('https://'+shop+'/admin/api/'+settings.api_version+'/assets.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'X-Shopify-Access-Token': settings.access_token,
+        'X-Shopify-API-Version': settings.api_version,
+        'X-Shopify-API-Key': settings.api_key,
+      },
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
   });
 
 
