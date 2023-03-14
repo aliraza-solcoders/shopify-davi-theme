@@ -6,6 +6,8 @@
         margin-top: 20px;
     }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css" integrity="sha512-1k7mWiTNoyx2XtmI96o+hdjP8nn0f3Z2N4oF/9ZZRgijyV4omsKOXEnqL1gKQNPy2MTSP9rIEWGcH/CInulptA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" defer></script>
 <div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}">
 <table id="quotes_table" style="display:none">
 <tr>
@@ -49,6 +51,7 @@ fetch("/apps/sdta/get_quotes", {
     console.log(response);
     jQuery("#quotes").html(response);
     jQuery("#quotes_table").show();
+    jQuery("#quotes_table").datatable();
 })
 }, 2000);
 
