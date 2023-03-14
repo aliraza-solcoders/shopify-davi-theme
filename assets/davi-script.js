@@ -188,6 +188,39 @@ function form_submit(){
       field_settings[label] = $( this ).val();
       // data.append('davi_input_files', $( this ).files[index])
   });
+
+
+  const fileInput = document.querySelector('input[type="file"]');
+
+  const file = fileInput.files[0];
+
+  const formData = new FormData();
+  formData.append('file', file);
+
+  fetch('https://your-store.myshopify.com/admin/api/2021-09/assets.json', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'X-Shopify-Access-Token': 'your-access-token',
+      'X-Shopify-API-Version': '2021-09',
+      'X-Shopify-API-Key': 'your-api-key'
+    },
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+
+
+
+
+
+
   // console.log(data);  
   // fetch("/apps/sdta/file_upload", {
   //     method: "POST",
