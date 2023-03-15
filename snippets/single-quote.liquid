@@ -118,15 +118,28 @@
                         html += '<div class="col-md-6 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-6 p-3">'+value.value+'</div>';
                     }
                     else{
-                        file += '<div class="col-md-3 p-3"><strong>'+value.label+'</strong></div><div class="col-md-9 p-3">'+value.value+'</div>';
+                        file += '<div class="col-md-3 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-9 p-3">'+value.value+'</div>';
 
                     }
                 });
                 jQuery(".quotation_detail").after(html);
                 jQuery(".files").after(file);
                 jQuery("#ref_number").html(response.referrence_number);
-                jQuery("#quotation_status").html(response.status);
-                jQuery("#total_price").html(response.price);
+                var today = new Date();
+                if(response.status  == 'quotation_ready' && response.expiry_date > today){
+                    
+                jQuery("#quotation_status").html('<button class="btn btn-success" id="create_order">Create Draft Order</button>');
+                }
+                var status ;
+                if(response.status  == 'pending'){
+                    var status '<span class="badge bg-warning">Pending</span>';
+                } else if(response.status  == 'quotation_ready'){
+                    var status '<span class="badge bg-info">Quotation Ready</span>';
+                } else if(response.status  == 'quotation_accepted'){
+                    var status '<span class="badge bg-success">Quotation Accepted</span>';
+                }
+                jQuery("#quotation_status").html(status);
+                jQuery("#total_price").html(response.total_price);
                 jQuery("#single-quotation").show();
             })
       }
