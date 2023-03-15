@@ -132,11 +132,11 @@
                 }
                 var status ;
                 if(response.status  == 'pending'){
-                    var status '<span class="badge bg-warning">Pending</span>';
+                    var status = '<span class="badge bg-warning">Pending</span>';
                 } else if(response.status  == 'quotation_ready'){
-                    var status '<span class="badge bg-info">Quotation Ready</span>';
+                    var status = '<span class="badge bg-info">Quotation Ready</span>';
                 } else if(response.status  == 'quotation_accepted'){
-                    var status '<span class="badge bg-success">Quotation Accepted</span>';
+                    var status = '<span class="badge bg-success">Quotation Accepted</span>';
                 }
                 jQuery("#quotation_status").html(status);
                 jQuery("#total_price").html(response.total_price);
