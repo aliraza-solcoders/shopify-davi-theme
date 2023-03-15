@@ -36,20 +36,11 @@
                 <div class="col-md-3">
                     <h5><i class="fas fa-phone fa-rotate-90"></i> Contact Us</h5>
                 </div>
-                <p class="mt-3"><strong>Notice:</strong> This quote expires on 15/08/2023.<br/>
+                <p class="mt-3"><strong>Notice:</strong> This quote expires on <span id="expiry_date"></span>.<br/>
                 <strong>Notice:</strong> If there is more than 10% change in material prices after the quote is provided, it loses its validity. See our policy</p>
                 <div class="col-md-6 bg-light">
                     <div class="row">
                         <div class="col-md-12 p-3 quotation_detail"><strong>Quote Details</strong></div>
-                        <div class="col-md-6 p-3"><strong>Material</strong></div><div class="col-md-6 p-3">14K Gold</div>
-                        <div class="col-md-6 p-3"><strong>Plating</strong></div><div class="col-md-6 p-3">XXX</div>
-                        {% comment %} <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div>
-                        <div class="col-md-6 p-3"><strong>XXX</strong></div><div class="col-md-6 p-3">XXX</div> {% endcomment %}
                     </div>
                 </div>
                 <div class="col-md-6 p-3">
@@ -125,6 +116,7 @@
                 jQuery(".quotation_detail").after(html);
                 jQuery(".files").after(file);
                 jQuery("#ref_number").html(response.referrence_number);
+                jQuery("#expiry_date").html(response.expiry_date);
                 var today = new Date();
                 if(response.status  == 'quotation_ready' && response.expiry_date > today){
                     
