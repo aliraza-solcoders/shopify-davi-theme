@@ -122,7 +122,7 @@
             shop: shop,
             ref_number: ref_number,
             };
-            $('#checkout').click(function (e) { 
+            $('#checkout').on('click', function(){
                 $('.loader').show();
                     var order = {
                         customer_email : customer_email,
