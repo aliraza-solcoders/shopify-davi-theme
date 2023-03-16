@@ -2,6 +2,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer=""></script>
 {% comment %} <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin='anonymous' defer></script> {% endcomment %}
 <style>
 #davi_theme{
@@ -11,7 +12,7 @@
     margin-top: 20px;
 }
 </style>
-<div id="davi_theme" data-shop="{{ shop.domain }}">
+<div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}" data-customer_name="{{ customer.name }}">
     <div class="mt-4 mb-4" id="single-quotation" style="display:none">
         <div class="container my-4">
             <div class="row bg-light px-5 py-2">
@@ -23,7 +24,7 @@
                 </div>
                 <div class="col-md-4 d-flex justify-content-between">
                     <span><strong>Total Price</strong>: <span id='total_price'></span>  </span>
-                    <button class="btn btn-primary float-right btn-sm" id="checkout">Go to Checkout</button>
+                    <button class="btn btn-primary float-right btn-sm" style="display:none" id="checkout">Accept Quotation</button>
                 </div>
             </div>
             <div class="row p-3">
@@ -105,19 +106,48 @@
         </div>
     </div>
 </div>
+
+<div class="loader text-center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
 <script>
   setTimeout(function(){
 
       var url = new URL(location.href);
       var params = new URLSearchParams(url.search);
       var shop = jQuery('#davi_theme').attr('data-shop');
+      var customer_email = jQuery('#davi_theme').attr('data-customer_email');
+      var customer_name = jQuery('#davi_theme').attr('data-customer_name');
       var ref_number = params.get('ref_number');
       if ( ref_number != null ) {  
             var data = {
             shop: shop,
             ref_number: ref_number,
             };
-
+            $('#checkout').click(function (e) { 
+                $('.loader').show();
+                    var order = {
+                        customer_email : customer_email,
+                        customer_name : customer_name,
+                        title: 'custom-order'.+ ref_number
+                    }
+                fetch("/apps/sdta/create_order", {
+                    method: "POST",
+                    body: JSON.stringify(order),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                })
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (response) {
+                    Swal.fire(
+                        'Draft Order Created!',
+                        'We redirect you to on orders page to pay',
+                        'success'
+                      )
+                    $('.loader').hide();
+                });
+            });
             fetch("/apps/sdta/get_single_quote", {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -165,8 +195,8 @@
                 jQuery("#total").html(response.total);
                 var today = new Date();
                 if(response.status  == 'quotation_ready' && response.expiry_date > today){
-                    
-                jQuery("#quotation_status").html('<button class="btn btn-success" id="create_order">Create Draft Order</button>');
+                    jQuery("#checkout").html('Accept Quotation');
+                    jQuery("#checkout").show();
                 }
                 var status ;
                 if(response.status  == 'pending'){
@@ -177,7 +207,7 @@
                     var status = '<span class="badge bg-success">Quotation Accepted</span>';
                 }
                 jQuery("#quotation_status").html(status);
-                jQuery("#total_price").html(response.total_price);
+                jQuery("#total_price").html(response.total);
                 jQuery("#single-quotation").show();
             })
       }
