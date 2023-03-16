@@ -168,10 +168,8 @@
                 jQuery("#vat_price").html(response.vat_price);
                 jQuery("#total").html(response.total);
                 var today = new Date();
-                console.log(today)
-                console.log(response.expiry_date)
-                console.log(response.status)
-                if(response.status  == 'quotation_ready' && response.expiry_date > today){
+                var expiry_date = new Date(response.expiry_date)
+                if(response.status  == 'quotation_ready' && expiry_date > today){
                     jQuery("#checkout").html('Accept Quotation');
                     jQuery("#checkout").show();
                 }
