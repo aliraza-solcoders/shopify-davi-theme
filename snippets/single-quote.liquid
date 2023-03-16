@@ -193,11 +193,11 @@
         $('.loader').show();
         var total_price = jQuery('#total').val();
         var order = {
-            title: 'custom-order'+ ref_number
+            title: 'custom-order'+ ref_number,
             price : total_price,
             first_name : customer_first_name,
             last_name : customer_last_name,
-            email : customer_email,
+            email : customer_email
         }
         fetch("/apps/sdta/create_order", {
             method: "POST",
