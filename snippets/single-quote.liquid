@@ -191,7 +191,7 @@
       $('#checkout').on('click', function(){
         $('#single-quotation').hide();
         $('.loader').show();
-        var total_price = jQuery('#total').val();
+        var total_price = jQuery('#total').text();
         var order = {
             title: 'custom-order'+ ref_number,
             price : total_price,
