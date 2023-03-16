@@ -192,10 +192,14 @@
         $('#single-quotation').hide();
         $('.loader').show();
         var total_price = jQuery('#total').text();
+        var shipping = jQuery('#shipping').text();
+        var vat_price = jQuery('#vat_price').text();
         var order = {
             title: 'custom-order'+ ref_number,
             ref_number : ref_number,
             price : total_price,
+            shipping : shipping,
+            vat_price : vat_price,
             first_name : customer_first_name,
             last_name : customer_last_name,
             email : customer_email
