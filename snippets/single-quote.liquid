@@ -119,35 +119,9 @@
       var ref_number = params.get('ref_number');
       if ( ref_number != null ) {  
             var data = {
-            shop: shop,
-            ref_number: ref_number,
+                shop: shop,
+                ref_number: ref_number,
             };
-            $('#checkout').on('click', function(){
-                $('.loader').show();
-                    var order = {
-                        customer_email : customer_email,
-                        customer_name : customer_name,
-                        title: 'custom-order'+ ref_number
-                    }
-                fetch("/apps/sdta/create_order", {
-                    method: "POST",
-                    body: JSON.stringify(order),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                })
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (response) {
-                    Swal.fire(
-                        'Draft Order Created!',
-                        'We redirect you to on orders page to pay',
-                        'success'
-                      )
-                    $('.loader').hide();
-                });
-            });
             fetch("/apps/sdta/get_single_quote", {
                 method: "POST",
                 body: JSON.stringify(data),
@@ -194,6 +168,9 @@
                 jQuery("#vat_price").html(response.vat_price);
                 jQuery("#total").html(response.total);
                 var today = new Date();
+                console.log(today)
+                console.log(response.expiry_date)
+                console.log(response.status)
                 if(response.status  == 'quotation_ready' && response.expiry_date > today){
                     jQuery("#checkout").html('Accept Quotation');
                     jQuery("#checkout").show();
@@ -211,6 +188,33 @@
                 jQuery("#single-quotation").show();
             })
       }
+      
+      $('#checkout').on('click', function(){
+        $('.loader').show();
+            var order = {
+                customer_email : customer_email,
+                customer_name : customer_name,
+                title: 'custom-order'+ ref_number
+            }
+        fetch("/apps/sdta/create_order", {
+            method: "POST",
+            body: JSON.stringify(order),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            Swal.fire(
+                'Draft Order Created!',
+                'We redirect you to on orders page to pay',
+                'success'
+              )
+            $('.loader').hide();
+        });
+    });
 }, 2000);
 
 </script>
