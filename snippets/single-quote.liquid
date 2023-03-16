@@ -59,13 +59,7 @@
                 </div>
                 <div class="col-md-12 bg-light mt-4">
                     <div class="row">
-                        <div class="col-md-12 p-3"><strong> Services and Prices</strong></div>
-                        <div class="col-md-6 p-3"><strong>Wax 3D Printing</strong></div>
-                        <div class="col-md-6 p-3 text-end"><p class="pr-3">$509</p></div>
-                        <div class="col-md-6 p-3"><strong>Molding</strong></div>
-                        <div class="col-md-6 p-3 text-end"><p class="pr-3">$618</p></div>
-                        <div class="col-md-6 p-3"><strong>Materials</strong></div>
-                        <div class="col-md-6 p-3 text-end"><p class="pr-3">$402</p></div>
+                        <div class="col-md-12 p-3 service_html"><strong> Services and Prices</strong></div>
                     </div>
                 </div>
             </div>
@@ -113,6 +107,13 @@
 
                     }
                 });
+                const services = JSON.parse(response.services);
+                var serviceshtml = "";
+                $(services).each(function( key, value ) {
+                    
+                    serviceshtml += '<div class="col-md-4 p-3"><strong>'+value.service+'</strong></div><div class="col-md-4 p-3 text-center"><p class="pr-3">'+value.quantity+'</p></div><div class="col-md-4 p-3 text-end"><p class="pr-3">'+value.price+'</p></div>';
+                });
+                jQuery(".service_html").after(serviceshtml);
                 jQuery(".quotation_detail").after(html);
                 jQuery(".files").after(file);
                 jQuery("#ref_number").html(response.referrence_number);
