@@ -127,7 +127,7 @@
                     var order = {
                         customer_email : customer_email,
                         customer_name : customer_name,
-                        title: 'custom-order'.+ ref_number
+                        title: 'custom-order'+ ref_number
                     }
                 fetch("/apps/sdta/create_order", {
                     method: "POST",
