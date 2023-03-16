@@ -194,6 +194,7 @@
         var total_price = jQuery('#total').text();
         var order = {
             title: 'custom-order'+ ref_number,
+            ref_number : ref_number,
             price : total_price,
             first_name : customer_first_name,
             last_name : customer_last_name,
@@ -216,7 +217,7 @@
                 'success'
               )
             $('.loader').hide();
-            location.href = shop+'/account';
+            location.href = 'https://'+shop+'/account';
         });
     });
 }, 2000);
