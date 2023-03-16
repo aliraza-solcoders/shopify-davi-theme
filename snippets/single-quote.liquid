@@ -12,7 +12,7 @@
     margin-top: 20px;
 }
 </style>
-<div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}" data-customer_name="{{ customer.name }}">
+<div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}" data-customer_first_name="{{ customer.first_name }}" data-customer_last_name="{{ customer.last_name }}">
     <div class="mt-4 mb-4" id="single-quotation" style="display:none">
         <div class="container my-4">
             <div class="row bg-light px-5 py-2">
@@ -115,7 +115,8 @@
       var params = new URLSearchParams(url.search);
       var shop = jQuery('#davi_theme').attr('data-shop');
       var customer_email = jQuery('#davi_theme').attr('data-customer_email');
-      var customer_name = jQuery('#davi_theme').attr('data-customer_name');
+      var customer_first_name = jQuery('#davi_theme').attr('data-customer_first_name');
+      var customer_last_name = jQuery('#davi_theme').attr('data-customer_last_name');
       var ref_number = params.get('ref_number');
       if ( ref_number != null ) {  
             var data = {
@@ -188,12 +189,16 @@
       }
       
       $('#checkout').on('click', function(){
+        $('#single-quotation').hide();
         $('.loader').show();
-            var order = {
-                customer_email : customer_email,
-                customer_name : customer_name,
-                title: 'custom-order'+ ref_number
-            }
+        var total_price = jQuery('#total').val();
+        var order = {
+            title: 'custom-order'+ ref_number
+            price : total_price,
+            first_name : customer_first_name,
+            last_name : customer_last_name,
+            email : customer_email,
+        }
         fetch("/apps/sdta/create_order", {
             method: "POST",
             body: JSON.stringify(order),
