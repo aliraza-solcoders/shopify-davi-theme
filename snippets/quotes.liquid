@@ -53,12 +53,17 @@ fetch("/apps/sdta/get_quotes", {
     jQuery("#quotes").html(response);
     setTimeout(function(){
         jQuery("#quotes_table").show();
-        jQuery("#quotes_table").DataTable({
-            "ordering": false,
-            "lengthChange": false,
-            "sorting": false
-
-        });
+        if(response.contains('No Record Found')){
+        
+        }
+        else{
+            jQuery("#quotes_table").DataTable({
+                "ordering": false,
+                "lengthChange": false,
+                "sorting": false
+    
+            });
+        }
         jQuery("#quotes_table_filter").css("float", "left");
     }, 2000);
 })
