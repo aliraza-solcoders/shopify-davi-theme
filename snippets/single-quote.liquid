@@ -157,7 +157,7 @@
                 var serviceshtml = "";
                 $(services).each(function( key, value ) {
                     
-                    serviceshtml += '<div class="col-md-4 p-3"><strong>'+value.service+'</strong></div><div class="col-md-4 p-3 text-center"><p class="pr-3">'+value.quantity+'</p></div><div class="col-md-4 p-3 text-end"><p class="pr-3">'+value.price+'</p></div>';
+                    serviceshtml += '<div class="col-md-4 p-3"><strong>'+value.service+'</strong></div><div class="col-md-4 p-3 text-center"><p class="pr-3">'+value.quantity+'</p></div><div class="col-md-4 p-3 text-end"><p class="pr-3">'+value.price+' '+response.currency+'</p></div>';
                 });
                 jQuery(".service_html").after(serviceshtml);
                 jQuery(".quotation_detail").after(html);
@@ -165,11 +165,11 @@
                 jQuery("#ref_number").html(response.referrence_number);
                 jQuery("#expiry_date").html(response.expiry_date);
                 
-                jQuery("#shipping").html(response.shipping+response.currency);
-                jQuery("#min_order").html(response.min_order+response.currency);
-                jQuery("#sub_total").html(response.sub_total+response.currency);
-                jQuery("#vat_price").html(response.vat_price+response.currency);
-                jQuery("#total").html(response.total+response.currency);
+                jQuery("#shipping").html(response.shipping+' '+response.currency);
+                jQuery("#min_order").html(response.min_order+' '+response.currency);
+                jQuery("#sub_total").html(response.sub_total+' '+response.currency);
+                jQuery("#vat_price").html(response.vat_price+' '+response.currency);
+                jQuery("#total").html(response.total+' '+response.currency);
                 var today = new Date();
                 var expiry_date = new Date(response.expiry_date)
                 if(response.status  == 'quotation_ready' && expiry_date > today){
