@@ -185,7 +185,7 @@
                     var status = '<span class="badge bg-success">Quotation Accepted</span>';
                 }
                 jQuery("#quotation_status").html(status);
-                jQuery("#total_price").html(response.total);
+                jQuery("#total_price").html(response.total+' '+response.currency);
                 if(response.status  == 'quotation_accepted'){
                     jQuery(".order_id").show();
                     jQuery("#order_id").html(response.order_id);
