@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-4 d-flex justify-content-between">
                     <span class="order_id" style="display:none"><strong>Order ID</strong>: <span id='order_id'></span>  </span>
-                    <span><strong>Total Price</strong>: <span id='total_price'></span>  </span>
+                    <span><strong>Total Price</strong>: <span id='total_price'></span> <span class='currency'></span>  </span>
                     <button class="btn btn-primary float-right btn-sm" style="display:none" id="checkout">Accept Quotation</button>
                 </div>
             </div>
@@ -75,31 +75,31 @@
                             <label for="sub_total">Subtotal</label>
                         </div>
                         <div class="col-md-6 mb-3 text-end">
-                            <span id="sub_total" ></span>
+                            <span id="sub_total" ></span><span class='currency'></span>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="shipping">Shipping</label>
                         </div>
                         <div class="col-md-6 mb-3 text-end">
-                            <span id="shipping"></span>
+                            <span id="shipping"></span><span class='currency'></span>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="min_order">Minimum order value surchange</label>
                         </div>
                         <div class="col-md-6 mb-3 text-end">
-                            <span id="min_order"></span>
+                            <span id="min_order"></span><span class='currency'></span>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="vat_price">VAT </label>
                         </div>
                         <div class="col-md-6 text-end">
-                            <span id="vat_price" ></span>
+                            <span id="vat_price" ></span><span class='currency'></span>
                         </div>
                         <div class="col-md-6">
                             <label for="total">Total</label>
                         </div>
                         <div class="col-md-6 text-end">
-                            <span id="total" ></span>
+                            <span id="total" ></span><span class='currency'></span>
                         </div>
                     </div>
 
@@ -157,7 +157,7 @@
                 var serviceshtml = "";
                 $(services).each(function( key, value ) {
                     
-                    serviceshtml += '<div class="col-md-4 p-3"><strong>'+value.service+'</strong></div><div class="col-md-4 p-3 text-center"><p class="pr-3">'+value.quantity+'</p></div><div class="col-md-4 p-3 text-end"><p class="pr-3">'+value.price+' '+response.currency+'</p></div>';
+                    serviceshtml += '<div class="col-md-4 p-3"><strong>'+value.service+'</strong></div><div class="col-md-4 p-3 text-center"><p class="pr-3">'+value.quantity+'</p></div><div class="col-md-4 p-3 text-end"><p class="pr-3">'+value.price+'<span class="currency"></span></p></div>';
                 });
                 jQuery(".service_html").after(serviceshtml);
                 jQuery(".quotation_detail").after(html);
@@ -165,11 +165,12 @@
                 jQuery("#ref_number").html(response.referrence_number);
                 jQuery("#expiry_date").html(response.expiry_date);
                 
-                jQuery("#shipping").html(response.shipping+' '+response.currency);
-                jQuery("#min_order").html(response.min_order+' '+response.currency);
-                jQuery("#sub_total").html(response.sub_total+' '+response.currency);
-                jQuery("#vat_price").html(response.vat_price+' '+response.currency);
-                jQuery("#total").html(response.total+' '+response.currency);
+                jQuery("#shipping").html(response.shipping);
+                jQuery("#min_order").html(response.min_order);
+                jQuery("#sub_total").html(response.sub_total);
+                jQuery("#vat_price").html(response.vat_price);
+                jQuery("#total").html(response.total);
+                jQuery(".currency").html(response.currency);
                 var today = new Date();
                 var expiry_date = new Date(response.expiry_date)
                 if(response.status  == 'quotation_ready' && expiry_date > today){
@@ -185,7 +186,7 @@
                     var status = '<span class="badge bg-success">Quotation Accepted</span>';
                 }
                 jQuery("#quotation_status").html(status);
-                jQuery("#total_price").html(response.total+' '+response.currency);
+                jQuery("#total_price").html(response.total);
                 if(response.status  == 'quotation_accepted'){
                     jQuery(".order_id").show();
                     jQuery("#order_id").html(response.order_id);
