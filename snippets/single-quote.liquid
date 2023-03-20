@@ -48,8 +48,8 @@
                 <div class="col-md-6 p-3">
                     <div class="row">
                         <div class="col-md-12 mb-5">
-                            <h5>What are the payment options?</h5>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque velit enim laborum dolor? Corrupti sapiente rerum odit voluptates, iste ipsa recusandae totam perferendis harum nostrum sint, voluptate et quisquam explicabo.</p>
+                            {% comment %} <h5>What are the payment options?</h5>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque velit enim laborum dolor? Corrupti sapiente rerum odit voluptates, iste ipsa recusandae totam perferendis harum nostrum sint, voluptate et quisquam explicabo.</p> {% endcomment %}
                         </div>
                         <div class="col-md-12 bg-light mt-5 ">
                             <div class="row">
@@ -148,7 +148,7 @@
                         html += '<div class="col-md-6 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-6 p-3 border-bottom">'+value.value+'</div>';
                     }
                     else{
-                        file += '<div class="col-md-3 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-9 p-3 border-bottom">'+value.value+'</div>';
+                        file += '<div class="col-md-3 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-9 p-3 border-bottom"><a href="'+value.value+'">'+value.value+'</a></div>';
 
                     }
                 });
