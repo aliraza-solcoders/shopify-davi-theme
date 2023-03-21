@@ -91,6 +91,15 @@
             "davi_field_type": "pdf",
             "davi_field_value": ""
           }
+        },
+        "259ca220-5d75-4a0f-94de-02eff0bc9418": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Item Type",
+            "davi_field_show": "step1",
+            "davi_field_type": "multipledropdown",
+            "davi_field_value": "item 1,item 2"
+          }
         }
       },
       "block_order": [
@@ -102,7 +111,8 @@
         "57549ed9-2ba6-472d-9617-7863237ffe02",
         "86c46012-fdb4-40b4-9164-288314d87dcf",
         "d2857725-dff3-405d-9e65-df0079f05d1b",
-        "1cf96a47-b5cd-4319-850f-0c8fcddf1070"
+        "1cf96a47-b5cd-4319-850f-0c8fcddf1070",
+        "259ca220-5d75-4a0f-94de-02eff0bc9418"
       ],
       "settings": {
         "section_title": "Custom Contact Form"
