@@ -208,7 +208,10 @@ function form_submit(){
     console.log(settings);
     const fileInput = document.querySelector('input[type="file"]');
     var davi_input_pdf = {};
-    label = fileInput.prev().prev().text();
+    jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+  
+      label = $(this).prev().prev().text();
+    })
     davi_input_pdf['label'] = label;
     davi_input_pdf['type'] = 'file';
     const file = $('input[type=file]').prop('files')[0];
