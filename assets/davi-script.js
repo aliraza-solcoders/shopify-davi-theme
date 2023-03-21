@@ -206,14 +206,14 @@ function form_submit(){
   })
   .then(function (settings) {
     console.log(settings);
-    // const fileInput = document.querySelector('input[type="file"]');
-    // var davi_input_pdf = {};
-    // jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+    const fileInput = document.querySelector('input[type="file"]');
+    var davi_input_pdf = {};
+    jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
       
-    //   label = $(this).prev().prev().text();
-    // })
-    // davi_input_pdf['label'] = label;
-    // davi_input_pdf['type'] = 'file';
+      label = $(this).prev().prev().text();
+    })
+    davi_input_pdf['label'] = label;
+    davi_input_pdf['type'] = 'file';
     const file = $('input[type=file]').prop('files')[0];
     var formData = new FormData();
     formData.append('file', file);
@@ -236,8 +236,8 @@ function form_submit(){
     .then(data => {
       console.log(data);  
       
-    // davi_input_pdf['value'] = 'test';
-    // field_settings.push(davi_input_pdf);
+    davi_input_pdf['value'] = data.file;
+    field_settings.push(davi_input_pdf);
         var form_type = $( 'input[name=davi_form_type]' ).val();
         var shop = $('#shop').val();
         var data = {
