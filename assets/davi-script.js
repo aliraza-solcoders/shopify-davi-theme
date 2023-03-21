@@ -226,7 +226,6 @@ function form_submit(){
     fetch('/apps/sdta/save_file', {
       method: 'POST',
       headers: {
-        'Content-Type': 'multipart/form-data',
         'X-Shopify-Access-Token': settings.access_token,
         'X-Shopify-API-Version': settings.api_version,
         'X-Shopify-API-Key': settings.api_key,
