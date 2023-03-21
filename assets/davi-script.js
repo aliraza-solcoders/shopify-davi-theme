@@ -194,6 +194,9 @@ function form_submit(){
   var data = {
     shop: shop,
   };
+  const file = $('input[type=file]').prop('files')[0];
+  var formData = new FormData();
+  formData.append('file', file);
   fetch("/apps/sdta/get_settings", {
       method: "POST",
       body: JSON.stringify(data),
@@ -214,9 +217,7 @@ function form_submit(){
     // })
     // davi_input_pdf['label'] = label;
     // davi_input_pdf['type'] = 'file';
-    const file = $('input[type=file]').prop('files')[0];
-    var formData = new FormData();
-    formData.append('file', file);
+    
     // console.log(fileInput);
     console.log(file);
     console.log(formData);
