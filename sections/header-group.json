@@ -35,31 +35,10 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "9685aa9e-786c-47d3-bbf3-bf35ed49ace3": {
-      "type": "davi-multistep-form",
-      "blocks": {
-        "c5e38e50-a91e-43d2-9d0a-18fb703d76d5": {
-          "type": "davi_field",
-          "settings": {
-            "davi_field_label": "Your Name",
-            "davi_field_show": "step1",
-            "davi_field_type": "text",
-            "davi_field_value": ""
-          }
-        }
-      },
-      "block_order": [
-        "c5e38e50-a91e-43d2-9d0a-18fb703d76d5"
-      ],
-      "settings": {
-        "section_title": "this is my heading"
-      }
     }
   },
   "order": [
     "announcement-bar",
-    "header",
-    "9685aa9e-786c-47d3-bbf3-bf35ed49ace3"
+    "header"
   ]
 }
