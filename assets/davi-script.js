@@ -170,24 +170,24 @@ function form_submit(){
   //   console.log("key " + key + " has value " + field_settings[key]);
   // }
   // var data = new FormData()
-  jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-    var davi_input_pdf = {};
-    label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
-      // data.append('davi_input_pdf', $( this ).files[index])
-  });
-  jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-    var davi_input_file = {};
-    label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
-      // data.append('davi_input_file', $( this ).files[index])
-  });
-  jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-    var davi_input_files = {};
-    label = $(this).prev().prev().text();
-      field_settings[label] = $( this ).val();
-      // data.append('davi_input_files', $( this ).files[index])
-  });
+  // jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+  //   var davi_input_pdf = {};
+  //   // label = $(this).prev().prev().text();
+  //     // // field_settings[label] = $( this ).val();
+  //     // data.append('davi_input_pdf', $( this ).files[index])
+  // });
+  // jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+  //   var davi_input_file = {};
+  //   label = $(this).prev().prev().text();
+  //     field_settings[label] = $( this ).val();
+  //     // data.append('davi_input_file', $( this ).files[index])
+  // });
+  // jQuery( "input[name=davi_input_files]" ).each(function( index ) {
+  //   var davi_input_files = {};
+  //   label = $(this).prev().prev().text();
+  //     field_settings[label] = $( this ).val();
+  //     // data.append('davi_input_files', $( this ).files[index])
+  // });
 
 
   var shop = $('#shop').val();
@@ -217,18 +217,9 @@ function form_submit(){
     const file = $('input[type=file]').prop('files')[0];
     var formData = new FormData();
     formData.append('file', file);
-    // console.log(fileInput);
-    console.log(file);
-    console.log(formData);
-    
-    var shop = $('#shop').val();
+    formData.append('shop', shop);
     fetch('/apps/sdta/save_file', {
       method: 'POST',
-      headers: {
-        'X-Shopify-Access-Token': settings.access_token,
-        'X-Shopify-API-Version': settings.api_version,
-        'X-Shopify-API-Key': settings.api_key,
-      },
       body: formData
     })
     .then(response => response.json())
