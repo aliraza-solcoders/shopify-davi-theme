@@ -209,7 +209,7 @@ function form_submit(){
     const fileInput = document.querySelector('input[type="file"]');
     var davi_input_pdf = {};
     jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-  
+      
       label = $(this).prev().prev().text();
     })
     davi_input_pdf['label'] = label;
@@ -225,7 +225,10 @@ function form_submit(){
     fetch('/apps/sdta/save_file', {
       method: 'POST',
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        'X-Shopify-Access-Token': settings.access_token,
+        'X-Shopify-API-Version': settings.api_version,
+        'X-Shopify-API-Key': settings.api_key,
       },
       body: formData
     })
