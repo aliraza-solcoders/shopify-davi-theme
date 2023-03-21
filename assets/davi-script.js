@@ -207,12 +207,17 @@ function form_submit(){
   .then(function (settings) {
     console.log(settings);
     const fileInput = document.querySelector('input[type="file"]');
+    var davi_input_pdf = {};
+    label = fileInput.prev().prev().text();
+    davi_input_pdf['label'] = label;
+    davi_input_pdf['type'] = 'file';
     const file = $('input[type=file]').prop('files')[0];
     var formData = new FormData();
     formData.append('file', file);
     console.log(fileInput);
     console.log(file);
     console.log(formData);
+    
     var shop = $('#shop').val();
     fetch('/apps/sdta/save_file', {
       method: 'POST',
@@ -223,42 +228,34 @@ function form_submit(){
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-    })
-    .catch(error => {
-      console.error(error);
-    });
-  // console.log(data);  
-  // fetch("/apps/sdta/file_upload", {
-  //     method: "POST",
-  //     body: JSON.stringify(data),
-  //     headers: {
-  //         "Content-Type": "application/json",
-  //     },
-  // })
-  // .then(function (response) {
-  //     return response.json();
-  // })
-  // .then(function (settings) {
-      var form_type = $( 'input[name=davi_form_type]' ).val();
-      var shop = $('#shop').val();
-      var data = {
-        shop: shop,
-        form_type: form_type,
-        field_settings: field_settings,
-      };
-      fetch("/apps/sdta/save_form", {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-              "Content-Type": "application/json",
-          },
+      console.log(data);  
+      
+    davi_input_pdf['value'] = 'test';
+    field_settings.push(davi_input_pdf);
+        var form_type = $( 'input[name=davi_form_type]' ).val();
+        var shop = $('#shop').val();
+        var data = {
+          shop: shop,
+          form_type: form_type,
+          field_settings: field_settings,
+        };
+        fetch("/apps/sdta/save_form", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (settings) {
+          window.location = 'https://'+window.location.host+'/pages/quotes';
+        });
+        console.log(data);
       })
-      .then(function (response) {
-          return response.json();
-      })
-      .then(function (settings) {
-        window.location = 'https://'+window.location.host+'/pages/quotes';
+      .catch(error => {
+        console.error(error);
       });
   });       
 };
