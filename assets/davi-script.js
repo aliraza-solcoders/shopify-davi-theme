@@ -207,7 +207,7 @@ function form_submit(){
   .then(function (settings) {
     console.log(settings);
     const fileInput = document.querySelector('input[type="file"]');
-    const file = fileInput.files[0];
+    const file = fileInput.prop['files'];
     var formData = new FormData();
     formData.append('file', file);
     console.log(fileInput);
