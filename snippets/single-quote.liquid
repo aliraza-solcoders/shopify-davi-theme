@@ -150,7 +150,15 @@
                         html += '<div class="col-md-6 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-6 p-3 border-bottom">'+value.value+'</div>';
                     }
                     else{
-                        file += '<div class="col-md-3 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-9 p-3 border-bottom"><a href="'+value.value+'">'+value.value+'</a></div>';
+                        var extension = value.value.split(".");
+                        var iconsArray = ["pdf", "csv", "docx", "xlsx"];
+                        if(in_array($extension[3],$iconsArray)){
+                            var link = "<a href='"+value.value+"' target='_blank'><img src='public/images/"+extension[3]+"-icon.png' alt=''></a>";
+                        } else {
+                            var link = "<a href='"+value.value+"' target='_blank'><img src='public/images/unknown-icon.png' alt=''></a>";
+                        }
+
+                        file += '<div class="col-md-3 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-9 p-3 border-bottom">'+link+'</div>';
 
                     }
                 });
