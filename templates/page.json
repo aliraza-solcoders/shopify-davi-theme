@@ -17,7 +17,8 @@
             "davi_field_label": "First Name",
             "davi_field_show": "step1",
             "davi_field_type": "text",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": true
           }
         },
         "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24": {
@@ -26,7 +27,8 @@
             "davi_field_label": "Last Name",
             "davi_field_show": "step1",
             "davi_field_type": "text",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "3d80c722-32dd-4cb0-98d6-9f06c7470446": {
@@ -35,7 +37,8 @@
             "davi_field_label": "Date of Birth",
             "davi_field_show": "step1",
             "davi_field_type": "date",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "1e946471-db41-40fa-8e29-5d661ad3f205": {
@@ -44,7 +47,8 @@
             "davi_field_label": "Address",
             "davi_field_show": "step2",
             "davi_field_type": "address",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "d248a957-a2c5-459b-85b8-bb3277475a80": {
@@ -53,7 +57,8 @@
             "davi_field_label": "Message",
             "davi_field_show": "step2",
             "davi_field_type": "text",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "57549ed9-2ba6-472d-9617-7863237ffe02": {
@@ -62,7 +67,8 @@
             "davi_field_label": "Products",
             "davi_field_show": "step3",
             "davi_field_type": "products",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "86c46012-fdb4-40b4-9164-288314d87dcf": {
@@ -71,7 +77,8 @@
             "davi_field_label": "Phone Number",
             "davi_field_show": "step3",
             "davi_field_type": "text",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "d2857725-dff3-405d-9e65-df0079f05d1b": {
@@ -80,7 +87,8 @@
             "davi_field_label": "Email",
             "davi_field_show": "step1",
             "davi_field_type": "email",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "1cf96a47-b5cd-4319-850f-0c8fcddf1070": {
@@ -89,7 +97,8 @@
             "davi_field_label": "PDF File",
             "davi_field_show": "step1",
             "davi_field_type": "pdf",
-            "davi_field_value": ""
+            "davi_field_value": "",
+            "davi_field_required": false
           }
         },
         "259ca220-5d75-4a0f-94de-02eff0bc9418": {
@@ -98,7 +107,8 @@
             "davi_field_label": "Item Type",
             "davi_field_show": "step1",
             "davi_field_type": "multipledropdown",
-            "davi_field_value": "item 1,item 2"
+            "davi_field_value": "item 1,item 2",
+            "davi_field_required": false
           }
         }
       },
@@ -115,7 +125,13 @@
         "259ca220-5d75-4a0f-94de-02eff0bc9418"
       ],
       "settings": {
-        "section_title": "Custom Contact Form"
+        "section_title": "Custom Contact Form",
+        "step1_title": "Step 1 Title",
+        "step1_name": "Step 1 Name",
+        "step2_title": "Step 2 Title",
+        "step2_name": "Step 2 Name",
+        "step3_title": "Step 3 Title",
+        "step3_name": "Step 3 Name"
       }
     }
   },
