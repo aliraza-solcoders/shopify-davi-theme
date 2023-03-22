@@ -75,8 +75,8 @@ function validateForm() {
   // A loop that checks every input field in the current tab:
   for (i = 0; i < input.length; i++) {
     // If a field is empty...
-    var attr = $(this).attr('required');
-    if (typeof attr !== 'undefined' && attr !== false) {
+    
+    if (input[i].hasAttribute('required')) {
       if (input[i].value == "") {
         // add an "invalid" class to the field:
         input[i].className += " invalid";
@@ -87,8 +87,8 @@ function validateForm() {
   }
     for (i = 0; i < select.length; i++) {
       // If a field is empty...
-      var attr = $(this).attr('required');
-      if (typeof attr !== 'undefined' && attr !== false) {
+      
+      if (select[i].hasAttribute('required')) {
         if (select[i].value == "") {
           // add an "invalid" class to the field:
           select[i].className += " invalid";
