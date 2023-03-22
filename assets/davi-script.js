@@ -32,8 +32,21 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    form_submit()
-    return false;
+    
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'Do you want to submit the form',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes'
+        }).then((result) => {
+            if (result.isConfirmed) {
+              form_submit()
+              return false;
+            }
+        });
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
