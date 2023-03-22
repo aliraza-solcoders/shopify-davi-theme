@@ -45,11 +45,11 @@ function nextPrev(n) {
             if (result.isConfirmed) {
               form_submit()
               return false;
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
             }
         });
   }
-  // Otherwise, display the correct tab:
-  showTab(currentTab);
 }
 
 function validateForm() {
