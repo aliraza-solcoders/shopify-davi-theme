@@ -39,7 +39,7 @@
                 <div class="col-md-3">
                     <h5><i class="fa fa-phone"></i> Contact Us</h5>
                 </div> {% endcomment %}
-                <p class="mt-3"><strong>Notice:</strong> This quote expires on <span id="expiry_date"></span>.<br/>
+                <p class="mt-3 expiry_date"><strong>Notice:</strong> This quote expires on <span id="expiry_date"></span>.<br/>
                 <strong>Notice:</strong> If there is more than 10% change in material prices after the quote is provided, it loses its validity. See our policy</p>
                 <div class="col-md-6 bg-light">
                     <div class="row">
@@ -164,7 +164,14 @@
                 jQuery(".quotation_detail").after(html);
                 jQuery(".files").after(file);
                 jQuery("#ref_number").html(response.referrence_number);
-                jQuery("#expiry_date").html(response.expiry_date);
+                jQuery(".expiry_date").hide();
+                if(response.expiry_date == ''){
+                    jQuery(".expiry_date").hide();
+                }
+                else{
+                    jQuery(".expiry_date").show();
+                    jQuery("#expiry_date").html(response.expiry_date);
+                }
                 
                 jQuery("#shipping").html(response.shipping);
                 jQuery("#min_order").html(response.min_order);
