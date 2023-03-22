@@ -111,7 +111,6 @@
 
 <div class="loader text-center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
 <script>
-    {% comment %} jQuery('.loader').show(); {% endcomment %}
   setTimeout(function(){
 
       var url = new URL(location.href);
@@ -192,6 +191,11 @@
                 if(response.status  == 'quotation_accepted'){
                     jQuery(".order_id").show();
                     jQuery("#order_id").html(response.order_id);
+                }
+                
+                if(response.status  == 'pending'){
+                    jQuery("#total_price").html('----');
+                    jQuery("#total_price").next().html('');
                 }
                 jQuery('.loader').hide();
                 jQuery("#single-quotation").show();
