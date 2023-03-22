@@ -2,8 +2,8 @@
 {{ 'davi-style.css' | asset_url | stylesheet_tag }}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer=""></script>
 <script src="{{ 'davi-script.js' | asset_url }}" defer="defer"></script>
+<div class="loader text-center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
   <div class="container davi-customize">
-    <div class="loader text-center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
   <div id="form" style="display:none; padding : 20px;">
     <h2>{{ section.settings.section_title }}</h2>
     <form id="contactForm" enctype="multipart/form-data">
