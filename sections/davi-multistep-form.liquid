@@ -15,7 +15,12 @@
           <label>{{ block.settings.davi_field_label }}</label><br/>
         {% endif %}
         {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
-          <input type="text" class="davi-theme" name="davi_input_text"  required>
+          {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}
+            <input type="text" class="davi-theme" name="davi_input_text"  required>
+          {% else %}
+            <input type="text" class="davi-theme" name="davi_input_text" >
+          {% endif %}
+            
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "email" %}
           <input type="email" class="davi-theme" name="davi_input_email"  required>
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "pdf" %}
@@ -329,129 +334,6 @@
         $(this).removeClass('invalid');
       }
      });
-    {% comment %} jQuery("#submit_btn").click(function(){
-      var values;
-      jQuery( "input[name=davi_input_text]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_date]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "select[name=davi_products]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_address]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_appartment_no]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_zip_code]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-      jQuery( "input[name=davi_input_state]" ).each(function( index ) {
-        
-          var parentElem = $(this).siblings(),
-              parentTagName = parentElem.get(0).tagName.toLowerCase();
-          
-          if(parentTagName == "label") {
-              label = parentElem;
-          }
-        values += label+': '+$( this ).val() ;
-      });
-    }); {% endcomment %}
     }, 2000);
   
 </script>
