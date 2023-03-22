@@ -18,15 +18,13 @@
 <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
 <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js" defer></script>
 <div id="davi_theme" data-shop="{{ shop.domain }}" data-customer_email="{{ customer.email }}">
+<div class="loader text-center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
 <table id="quotes_table" style="display:none">
 <thead>
     <th>S. no.</th>
     <th>Referrence Number</th>
-    <th>Form Type</th>
-    {% comment %} <th>Field Settings</th> {% endcomment %}
-    {% comment %} <th>Shop</th> {% endcomment %}
+    <th>Form</th>
     <th>Status</th>
-    {% comment %} <th>Part Unit</th> {% endcomment %}
     <th>Price</th>
     <th></th>
 </thead>
@@ -59,6 +57,8 @@ fetch("/apps/sdta/get_quotes", {
 .then(function (response) {
     jQuery("#quotes").html(response);
     setTimeout(function(){
+        
+        jQuery('.loader').hide();
         jQuery("#quotes_table").show();
         if(response.contains('No Record Found')){
         
@@ -71,7 +71,7 @@ fetch("/apps/sdta/get_quotes", {
     
             });
         }
-        jQuery("#quotes_table_filter").css("float", "left");
+        {% comment %} jQuery("#quotes_table_filter").css("float", "left"); {% endcomment %}
     }, 2000);
 })
 }, 2000);
