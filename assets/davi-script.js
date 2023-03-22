@@ -42,7 +42,8 @@ function nextPrev(n) {
             confirmButtonText: 'Yes'
         }).then((result) => {
             if (result.isConfirmed) {
-              
+              jQuery('#form').hide();
+              jQuery( ".loader" ).show();
               form_submit()
               return false;
               // Otherwise, display the correct tab:
