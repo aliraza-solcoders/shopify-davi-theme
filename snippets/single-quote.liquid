@@ -111,7 +111,7 @@
 
 <div class="loader text-center" style="display:none"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
 <script>
-    $('.loader').show();
+    jQuery('.loader').show();
   setTimeout(function(){
 
       var url = new URL(location.href);
@@ -193,7 +193,7 @@
                     jQuery(".order_id").show();
                     jQuery("#order_id").html(response.order_id);
                 }
-                $('.loader').hide();
+                jQuery('.loader').hide();
                 jQuery("#single-quotation").show();
 
             })
@@ -201,7 +201,7 @@
       
       $('#checkout').on('click', function(){
         $('#single-quotation').hide();
-        $('.loader').show();
+        jQuery('.loader').show();
         var total_price = jQuery('#sub_total').text();
         var shipping = jQuery('#shipping').text();
         var vat_price = jQuery('#vat_price').text();
@@ -231,7 +231,7 @@
                 'We redirect you to on orders page to pay',
                 'success'
               )
-            $('.loader').hide();
+            jQuery('.loader').hide();
             location.href = 'https://'+shop+'/account';
         });
     });
