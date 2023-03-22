@@ -15,12 +15,7 @@
           <label>{{ block.settings.davi_field_label }}</label><br/>
         {% endif %}
         {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
-          {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}
-            <input type="text" class="davi-theme" name="davi_input_text"  required>
-          {% else %}
-            <input type="text" class="davi-theme" name="davi_input_text" >
-          {% endif %}
-            
+            <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %}>
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "email" %}
           <input type="email" class="davi-theme" name="davi_input_email"  required>
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "pdf" %}
