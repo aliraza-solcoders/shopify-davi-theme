@@ -152,7 +152,7 @@
                     else{
                         var extension = value.value.split(".");
                         var iconsArray = ["pdf", "csv", "docx", "xlsx"];
-                        if(in_array($extension[3],$iconsArray)){
+                        if(jQuery.inArray(extension[3],iconsArray) != -1){
                             var link = "<a href='"+value.value+"' target='_blank'><img src='public/images/"+extension[3]+"-icon.png' alt=''></a>";
                         } else {
                             var link = "<a href='"+value.value+"' target='_blank'><img src='public/images/unknown-icon.png' alt=''></a>";
