@@ -26,33 +26,38 @@ function nextPrev(n) {
   // Exit the function if any field in the current tab is invalid:
   // if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
-  if(n == 1)
+  if(n == 1){
+    
     currentTab = currentTab + n;
   
-  if (currentTab >= x.length) {
-    // ... the form gets submitted:
-    
-        Swal.fire({
-            title: 'Are you sure?',
-            text: 'Do you want to submit the form',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes'
-        }).then((result) => {
-            if (result.isConfirmed) {
-              jQuery('#form').hide();
-              jQuery( ".loader" ).show();
-              form_submit()
-              return false;
-              // Otherwise, display the correct tab:
-              showTab(currentTab);
-            }
-        });
+    if (currentTab >= x.length) {
+          Swal.fire({
+              title: 'Are you sure?',
+              text: 'Do you want to submit the form',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                jQuery('#form').hide();
+                jQuery( ".loader" ).show();
+                form_submit()
+                return false;
+                // Otherwise, display the correct tab:
+                showTab(currentTab);
+              }
+          });
+    }
+    else{
+      x[currentTab-1].style.display = "none";
+    }
   }
   else{
-    x[currentTab-1].style.display = "none";
+      x[currentTab].style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
   }
   // Increase or decrease the current tab by 1:
   // if you have reached the end of the form...
