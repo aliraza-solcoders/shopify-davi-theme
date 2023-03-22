@@ -8,6 +8,8 @@
     <h2>{{ section.settings.section_title }}</h2>
     <form id="contactForm" enctype="multipart/form-data">
     <div class="tab step1" >
+      <h4>{{ section.settings.step1_name }}</h4>
+      <h3>{{ section.settings.step1_title }}</h3>
       {% for block in section.blocks %}    
         {% if block.settings.davi_field_show == 'step1' %}
           <label>{{ block.settings.davi_field_label }}</label><br/>
@@ -51,6 +53,8 @@
       {% endfor %}
     </div>
     <div class="tab step2" >
+      <h4>{{ section.settings.step2_name }}</h4>
+      <h3>{{ section.settings.step2_title }}</h3>
       {% for block in section.blocks %}   
         {% if block.settings.davi_field_show == 'step2' %}
           <label>{{ block.settings.davi_field_label }}</label><br/>
@@ -94,6 +98,8 @@
       {% endfor %}
     </div>
     <div class="tab step3" >
+      <h4>{{ section.settings.step3_name }}</h4>
+      <h3>{{ section.settings.step3_title }}</h3>
       {% for block in section.blocks %}   
         {% if block.settings.davi_field_show == 'step3' %}
           <label>{{ block.settings.davi_field_label }}</label><br/>
