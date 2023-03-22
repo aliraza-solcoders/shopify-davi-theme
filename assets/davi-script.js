@@ -92,30 +92,30 @@ function form_submit(){
     davi_input_email['value'] = $( this ).val();
     field_settings.push(davi_input_email);
   });
-  jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
-    label = $(this).prev().prev().text();
-    var davi_input_pdf = {};
-    davi_input_pdf['label'] = label;
-    davi_input_pdf['type'] = 'file';
-    davi_input_pdf['value'] = $( this ).val();
-    field_settings.push(davi_input_pdf);
-  });
-  jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-    label = $(this).prev().prev().text();
-    var davi_input_file = {};
-    davi_input_file['label'] = label;
-    davi_input_file['type'] = 'file';
-    davi_input_file['value'] = $( this ).val();
-    field_settings.push(davi_input_file);
-  });
-  jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-    label = $(this).prev().prev().text();
-    var davi_input_files = {};
-    davi_input_files['label'] = label;
-    davi_input_files['type'] = 'file';
-    davi_input_files['value'] = $( this ).val();
-    field_settings.push(davi_input_files);
-  });
+  // jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
+  //   label = $(this).prev().prev().text();
+  //   var davi_input_pdf = {};
+  //   davi_input_pdf['label'] = label;
+  //   davi_input_pdf['type'] = 'file';
+  //   davi_input_pdf['value'] = $( this ).val();
+  //   field_settings.push(davi_input_pdf);
+  // });
+  // jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+  //   label = $(this).prev().prev().text();
+  //   var davi_input_file = {};
+  //   davi_input_file['label'] = label;
+  //   davi_input_file['type'] = 'file';
+  //   davi_input_file['value'] = $( this ).val();
+  //   field_settings.push(davi_input_file);
+  // });
+  // jQuery( "input[name=davi_input_files]" ).each(function( index ) {
+  //   label = $(this).prev().prev().text();
+  //   var davi_input_files = {};
+  //   davi_input_files['label'] = label;
+  //   davi_input_files['type'] = 'file';
+  //   davi_input_files['value'] = $( this ).val();
+  //   field_settings.push(davi_input_files);
+  // });
   jQuery( "input[name=davi_input_date]" ).each(function( index ) {
     label = $(this).prev().prev().text();
     var davi_input_date = {};
