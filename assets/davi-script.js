@@ -26,7 +26,8 @@ function nextPrev(n) {
   // Exit the function if any field in the current tab is invalid:
   // if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
-  currentTab = currentTab + n;
+  if(n == 1)
+    currentTab = currentTab + n;
   
   if (currentTab >= x.length) {
     // ... the form gets submitted:
