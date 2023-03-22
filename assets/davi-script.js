@@ -82,6 +82,7 @@ function validateForm() {
         valid = false;
       } 
     }
+  }
     for (i = 0; i < select.length; i++) {
       // If a field is empty...
       var attr = $(this).attr('required');
@@ -93,7 +94,8 @@ function validateForm() {
           valid = false;
         } 
       }    
-  }
+    }
+
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
