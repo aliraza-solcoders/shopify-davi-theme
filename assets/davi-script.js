@@ -68,16 +68,31 @@ function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByTagName("input");
+  input = x[currentTab].getElementsByTagName("input");
+  select = x[currentTab].getElementsByTagName("select");
   // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
+  for (i = 0; i < input.length; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false
-      valid = false;
-    } 
+    var attr = $(this).attr('required');
+    if (typeof attr !== 'undefined' && attr !== false) {
+      if (input[i].value == "") {
+        // add an "invalid" class to the field:
+        input[i].className += " invalid";
+        // and set the current valid status to false
+        valid = false;
+      } 
+    }
+    for (i = 0; i < select.length; i++) {
+      // If a field is empty...
+      var attr = $(this).attr('required');
+      if (typeof attr !== 'undefined' && attr !== false) {
+        if (select[i].value == "") {
+          // add an "invalid" class to the field:
+          select[i].className += " invalid";
+          // and set the current valid status to false
+          valid = false;
+        } 
+      }    
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
