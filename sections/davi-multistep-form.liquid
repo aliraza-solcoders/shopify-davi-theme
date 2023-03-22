@@ -3,6 +3,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer=""></script>
 <script src="{{ 'davi-script.js' | asset_url }}" defer="defer"></script>
   <div class="container davi-customize">
+    <div class="loader text-center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
   <div id="form" style="display:none; padding : 20px;">
     <h2>{{ section.settings.section_title }}</h2>
     <form id="contactForm" enctype="multipart/form-data">
@@ -135,7 +136,7 @@
         {% endif %}
       {% endfor %}
     </div>
-  <input type="hidden" id="shop" value="{{ shop.domain }}" />
+    <input type="hidden" id="shop" value="{{ shop.domain }}" />
 
   {% if section.settings.section_title %}
     <input type="hidden" name="davi_form_type" value="{{ section.settings.section_title }}" />
@@ -268,6 +269,8 @@
 
   setTimeout(function(){
      jQuery(function() {
+      
+        jQuery('.loader').hide();
         jQuery( "#form" ).show();
         jQuery( ".date" ).datepicker();
         jQuery( ".select2" ).select2();
