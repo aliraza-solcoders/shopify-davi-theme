@@ -14,10 +14,10 @@
         "6b05011d-8893-4fec-ad45-d0f5045e2a93": {
           "type": "davi_field",
           "settings": {
-            "davi_field_label": "First Name",
+            "davi_field_label": "Item Type",
             "davi_field_show": "step1",
-            "davi_field_type": "text",
-            "davi_field_value": "",
+            "davi_field_type": "dropdown",
+            "davi_field_value": "html,css,react",
             "davi_field_required": true
           }
         },
