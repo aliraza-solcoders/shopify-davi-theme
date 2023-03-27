@@ -78,6 +78,5 @@
     }, 2000);
 </script>
 {% else %}
-    <p>To see list of Quotes, Please <a href="https://{{ shop.dmain }}/account/login"></a> now and visit here again.</p>
     <p>To see list of Quotes, Please {{ 'Login' | customer_login_link }}  now and visit here again.</p>
 {% endif %}
