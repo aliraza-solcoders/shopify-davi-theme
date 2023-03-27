@@ -28,7 +28,7 @@
             "davi_field_show": "step1",
             "davi_field_type": "text",
             "davi_field_value": "",
-            "davi_field_required": false
+            "davi_field_required": true
           }
         },
         "3d80c722-32dd-4cb0-98d6-9f06c7470446": {
