@@ -117,7 +117,7 @@
             "davi_field_show": "step1",
             "davi_field_type": "multipledropdown_file",
             "davi_field_value": "item 1,item 2",
-            "davi_field_image": "Demo2.png,demo1.png",
+            "davi_field_image": "Demo2.png,demo1.png,fileDown.svg",
             "davi_field_required": false
           }
         }
