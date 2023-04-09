@@ -145,7 +145,7 @@ function form_submit(){
     field_settings.push(davi_input_date);
   });
   jQuery( "select[name=davi_products]" ).each(function( index ) {
-    label = $(this).prev().text();
+    label = $(this).parent().prev().text();
     var davi_products = {};
     davi_products['label'] = label;
     davi_products['type'] = 'select';
@@ -153,20 +153,38 @@ function form_submit(){
     field_settings.push(davi_products);
   });
   jQuery( "select[name=davi_dropdown]" ).each(function( index ) {
-    label = $(this).prev().text();
+    label = $(this).parent().prev().text();
     var davi_dropdown = {};
     davi_dropdown['label'] = label;
     davi_dropdown['type'] = 'select';
     davi_dropdown['value'] = $( this ).val();
     field_settings.push(davi_dropdown);
   });
-  jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {davi_multiple_dropdown = {};
-    label = $(this).prev().text();
+  jQuery( "select[name=davi_multiple_dropdown]" ).each(function( index ) {
+    davi_multiple_dropdown = {};
+    label = $(this).parent().prev().text();
     var davi_multiple_dropdown = {};
     davi_multiple_dropdown['label'] = label;
     davi_multiple_dropdown['type'] = 'select';
     davi_multiple_dropdown['value'] = $( this ).val();
     field_settings.push(davi_multiple_dropdown);
+  });
+  jQuery( "select[name=davi_dropdown_file]" ).each(function( index ) {
+    label = $(this).parent().prev().text();
+    var davi_dropdown_file = {};
+    davi_dropdown_file['label'] = label;
+    davi_dropdown_file['type'] = 'select';
+    davi_dropdown_file['value'] = $( this ).val();
+    field_settings.push(davi_dropdown_file);
+  });
+  jQuery( "select[name=davi_multiple_dropdown_file]" ).each(function( index ) {
+    davi_multiple_dropdown_file = {};
+    label = $(this).parent().prev().text();
+    var davi_multiple_dropdown_file = {};
+    davi_multiple_dropdown_file['label'] = label;
+    davi_multiple_dropdown_file['type'] = 'select';
+    davi_multiple_dropdown_file['value'] = $( this ).val();
+    field_settings.push(davi_multiple_dropdown_file);
   });
   var davi_input_address = {};
   jQuery( "input[name=davi_input_address]" ).each(function( index ) {davi_input_address = {};
