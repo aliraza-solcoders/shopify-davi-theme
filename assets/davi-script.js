@@ -241,13 +241,13 @@ function form_submit(){
     formData.append('file', file);
     // for file end
     // for files start
-    var davi_input_file = {};
-    jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+    var davi_input_files = {};
+    jQuery( "input[name=davi_input_files]" ).each(function( index ) {
       label = $(this).parent().prev().text();
     })
-    davi_input_file['label'] = label;
-    davi_input_file['type'] = 'file';
-    const files = $('input[name="davi_input_file"]').prop('files');
+    davi_input_files['label'] = label;
+    davi_input_files['type'] = 'files';
+    const files = $('input[name="davi_input_files"]').prop('files');
     var formData = new FormData();
     formData.append('files', files);
     // for files end
@@ -260,10 +260,21 @@ function form_submit(){
     .then(response => response.json())
     .then(data => {
       console.log(data);  
-      
-    davi_input_pdf['value'] = data.file;
-    field_settings.push(davi_input_pdf);
-    
+
+    if(data.pdf){
+      davi_input_pdf['value'] = data.pdf;
+      field_settings.push(davi_input_pdf);
+    }
+
+    if(data.file){
+      davi_input_file['value'] = data.file;
+      field_settings.push(davi_input_file);
+    }
+
+    if(data.files){
+      davi_input_files['value'] = data.files;
+      field_settings.push(davi_input_files);
+    }
         var form_type = $( 'input[name=davi_form_type]' ).val();
         var shop = $('#shop').val();
         var data = {
