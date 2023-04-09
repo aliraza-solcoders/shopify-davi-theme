@@ -749,10 +749,17 @@ item.appendChild(fragment2);
               <option>{{ option }}</option>
             {% endfor %}
           </select>
-
-            {% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+          {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multipledropdown" %}
+            {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+            <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multipledropdown"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+              {% for option in dropdown %}
+                <option>{{ option }}</option>
+              {% endfor %}
+            </select>
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "dropdown_file" %}
+            {% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-dropdown">
-                  <select name="davi_dropdown" class="custom-single-select davi-theme" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "dropdown" and block.settings.davi_field_required == true %}  required {% endif %}>
+                <select name="davi_dropdown" class="custom-single-select davi-theme" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "dropdown_file" and block.settings.davi_field_required == true %}  required {% endif %}>
             {% for option in dropdown %}
               <option>{{ option }}</option>
             {% endfor %}
@@ -764,26 +771,18 @@ item.appendChild(fragment2);
                 {% endfor %}
               </ul>
             </div>
-            
-        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multipledropdown" %}
-          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-          <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multipledropdown"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
-            {% for option in dropdown %}
-              <option>{{ option }}</option>
-            {% endfor %}
-          </select>
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "multipledropdown_file" %}
 
-
-           {% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+           {% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-2-dropdown">
-           <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multipledropdown"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+           <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multipledropdown_file"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for option in dropdown %}
               <option value="{{ option }}" data-img="{{ imgs[forloop.index0] | asset_url }}">{{ option }}</option>
             {% endfor %}
           </select>
               <button type="button" class="custom-multiple-2-dropdown-main">
                 <div class="custom-multiple-2-badge-wrapper">
-                
+        
                 </div>
                 </button>
               <ul class="custom-multiple-2-dropdown-list">
@@ -792,18 +791,16 @@ item.appendChild(fragment2);
                 {% endfor %}
               </ul>
             </div>
-
-            
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "products" %}
-          <select name="davi_products" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "products" and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+          {% comment %} <select name="davi_products" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "products" and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for product in collections['all'].products %}
                 <option title="{{ product.sku }}">{{ product.title }}</option>
             {% endfor %}
-          </select>
+          </select> {% endcomment %}
 
-           {% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+           {% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-2-dropdown">
-           <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "products"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+           <select name="davi_products" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "products"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for product in collections['all'].products %}
               <option value="{{ product.title | escape }}" data-img="{{ product | img_url: '100x' }}">{{ product.title | escape }}</option>
             {% endfor %}
@@ -913,7 +910,7 @@ item.appendChild(fragment2);
             {% endfor %}
           </select>
 
-{% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+{% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-dropdown">
                   <select name="davi_dropdown" class="custom-single-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "dropdown" and block.settings.davi_field_required == true %}  required {% endif %}>
             {% for option in dropdown %}
@@ -937,7 +934,7 @@ item.appendChild(fragment2);
           </select>
 
   
-           {% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+           {% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-2-dropdown">
            <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multipledropdown"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for option in dropdown %}
@@ -964,7 +961,7 @@ item.appendChild(fragment2);
             {% endfor %}
           </select>
 
-             {% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+             {% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-2-dropdown">
            <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "products"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for product in collections['all'].products %}
@@ -1078,7 +1075,7 @@ item.appendChild(fragment2);
             {% endfor %}
           </select>
 
-{% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+{% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-dropdown">
                   <select name="davi_dropdown" class="custom-single-select davi-theme" {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "dropdown" and block.settings.davi_field_required == true %}  required {% endif %}>
             {% for option in dropdown %}
@@ -1102,7 +1099,7 @@ item.appendChild(fragment2);
             {% endfor %}
           </select>
 
-         {% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+         {% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-2-dropdown">
            <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "multipledropdown"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for option in dropdown %}
@@ -1131,7 +1128,7 @@ item.appendChild(fragment2);
           </select>
 
 
-           {% assign imgs = 'demo1.png,Demo2.png' | split: ',' %}
+           {% assign imgs = block.settings.davi_field_image | split: ',' %}
             <div class="custom-multiple-2-dropdown">
            <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "products"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for product in collections['all'].products %}
@@ -1361,11 +1358,15 @@ item.appendChild(fragment2);
           ],
           "default": "text"
         },
-        
         {
           "id": "davi_field_value",
           "type": "text",
           "label": "Field Value (for comma seprated)"
+        },
+        {
+          "id": "davi_field_image",
+          "type": "text",
+          "label": "Field for Image (for comma seprated)"
         },
         {
           "id": "davi_field_required",
