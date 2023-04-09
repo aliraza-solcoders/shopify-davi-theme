@@ -218,6 +218,8 @@ function form_submit(){
       return response.json();
   })
   .then(function (settings) {
+    var formData = new FormData();
+
     // for pdf start
     var davi_input_pdf = {};
     jQuery( "input[name=davi_input_pdf]" ).each(function( index ) {
@@ -226,7 +228,6 @@ function form_submit(){
     davi_input_pdf['label'] = label;
     davi_input_pdf['type'] = 'pdf';
     const pdf = $('input[name="davi_input_pdf"]').prop('files')[0];
-    var formData = new FormData();
     formData.append('pdf', pdf);
     // for pdf end
     // for file start
@@ -237,7 +238,6 @@ function form_submit(){
     davi_input_file['label'] = label;
     davi_input_file['type'] = 'file';
     const file = $('input[name="davi_input_file"]').prop('files')[0];
-    var formData = new FormData();
     formData.append('file', file);
     // for file end
     // for files start
@@ -248,7 +248,6 @@ function form_submit(){
     davi_input_files['label'] = label;
     davi_input_files['type'] = 'files';
     const files = $('input[name="davi_input_files"]').prop('files');
-    var formData = new FormData();
     formData.append('files', files);
     // for files end
 
