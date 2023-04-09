@@ -224,7 +224,7 @@ function form_submit(){
       label = $(this).parent().prev().text();
     })
     davi_input_pdf['label'] = label;
-    davi_input_pdf['type'] = 'file';
+    davi_input_pdf['type'] = 'pdf';
     const pdf = $('input[name="davi_input_pdf"]').prop('files')[0];
     var formData = new FormData();
     formData.append('pdf', pdf);
@@ -253,6 +253,7 @@ function form_submit(){
     // for files end
 
     formData.append('shop', shop);
+    console.log(formData);
     fetch('/apps/sdta/save_file', {
       method: 'POST',
       body: formData
