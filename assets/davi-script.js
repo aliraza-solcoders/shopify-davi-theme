@@ -227,18 +227,18 @@ function form_submit(){
     })
     davi_input_pdf['label'] = label;
     davi_input_pdf['type'] = 'pdf';
-    const pdf = $('input[type="file"]').prop('files')[0];
+    const pdf = $('input[name="davi_input_pdf"]').prop('files')[0];
     formData.append('pdf', pdf);
     // for pdf end
     // for file start
-    // var davi_input_file = {};
-    // jQuery( "input[name=davi_input_file]" ).each(function( index ) {
-    //   label = $(this).parent().prev().text();
-    // })
-    // davi_input_file['label'] = label;
-    // davi_input_file['type'] = 'file';
-    // const file = $('input[name="davi_input_file"]').prop('files')[0];
-    // formData.append('file', file);
+    var davi_input_file = {};
+    jQuery( "input[name=davi_input_file]" ).each(function( index ) {
+      label = $(this).parent().prev().text();
+    })
+    davi_input_file['label'] = label;
+    davi_input_file['type'] = 'file';
+    const file = $('input[name="davi_input_file"]').prop('files')[0];
+    formData.append('file', file);
     // for file end
     // for files start
     // var davi_input_files = {};
@@ -266,10 +266,10 @@ function form_submit(){
       field_settings.push(davi_input_pdf);
     }
 
-    // if(data.file){
-    //   davi_input_file['value'] = data.file;
-    //   field_settings.push(davi_input_file);
-    // }
+    if(data.file){
+      davi_input_file['value'] = data.file;
+      field_settings.push(davi_input_file);
+    }
 
     // if(data.files){
     //   davi_input_files['value'] = data.files;
