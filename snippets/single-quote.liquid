@@ -26,7 +26,7 @@
                 <div class="col-md-4 d-flex justify-content-between">
                     <span class="order_id" style="display:none"><strong>Order ID</strong>: <span id='order_id'></span>  </span>
                     <span><strong>Total Price</strong>: <span id='total_price'></span> <span class='currency'></span>  </span>
-                    <button class="btn btn-primary float-right btn-sm" style="display:none" id="checkout">Accept Quotation</button>
+                    <button class="btn float-right btn-sm" style="display:none" id="checkout">Accept Quotation</button>
                 </div>
             </div>
             <div class="row p-3">
@@ -193,13 +193,14 @@
                     jQuery("#checkout").html('Accept Quotation');
                     jQuery("#checkout").show();
                 }
+
                 var status ;
                 if(response.status  == 'pending'){
-                    var status = '<span class="badge bg-warning">Pending</span>';
+                    var status = '<span class="badge" style="background:'+response.settings.quotation_pending+'">Pending</span>';
                 } else if(response.status  == 'quotation_ready'){
-                    var status = '<span class="badge bg-info">Quotation Ready</span>';
+                    var status = '<span class="badge" style="background:'+response.settings.quotation_ready+'">Quotation Ready</span>';
                 } else if(response.status  == 'quotation_accepted'){
-                    var status = '<span class="badge bg-success">Quotation Accepted</span>';
+                    var status = '<span class="badge" style="background:'+response.settings.quotation_accepted+'">Quotation Accepted</span>';
                 }
                 jQuery("#quotation_status").html(status);
                 jQuery("#total_price").html(response.total);
