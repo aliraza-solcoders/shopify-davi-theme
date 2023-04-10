@@ -237,6 +237,28 @@
     }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"defer="defer"></script>
+    <script>
+    // Add an event listener to the controlling setting
+var controllingSetting = document.getElementById('controlling-setting');
+controllingSetting.addEventListener('change', toggleOtherSettingVisibility);
+
+// Define the toggle function
+function toggleOtherSettingVisibility() {
+  console.log(controllingSetting.value);
+  var otherSetting = document.getElementById('other-setting');
+  if (controllingSetting.value === 'some-value') {
+    otherSetting.style.display = 'none';
+  } else {
+    otherSetting.style.display = 'block';
+  }
+}
+
+// Get the HTML elements
+var otherSetting = document.getElementById('other-setting');
+
+// Set the initial visibility based on the value of the controlling setting
+toggleOtherSettingVisibility();
+    </script>
   </head>
 
   <body class="gradient">
