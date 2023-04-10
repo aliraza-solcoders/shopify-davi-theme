@@ -146,7 +146,7 @@
                 console.log(formData)
                 $(formData).each(function( key, value ) {
                     console.log(value);
-                    if(value.type != "file"){
+                    if(value.type != "file" && value.type != "pdf"){
                         html += '<div class="col-md-6 p-3 border-bottom"><strong>'+value.label+'</strong></div><div class="col-md-6 p-3 border-bottom">'+value.value+'</div>';
                     }
                     else{
