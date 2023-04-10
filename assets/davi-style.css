@@ -1,4 +1,7 @@
 
+
+
+
 .select2-container{
   width: 100% !important;
 }
@@ -9,8 +12,9 @@ select.davi-theme{
 #contactForm {
     background-color: #ffffff;
     margin: 100px auto;
-    padding: 40px;
+    padding: 0;
     width: 70%;
+      max-width: 1500px;
     min-width: 300px;
   }
   
@@ -32,13 +36,20 @@ select.davi-theme{
   }
   
   button.davi-theme {
-    background-color: #04AA6D;
+/*     background-color: #04AA6D;*/
+    background-color: #050A30;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
     font-size: 17px;
-    font-family: Raleway;
+/*     font-family: Raleway; */
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+        margin: 10px;
+    border-radius: 5px;
   }
   
   button.davi-theme:hover {
@@ -48,6 +59,9 @@ select.davi-theme{
   #prevBtn {
     background-color: #bbbbbb;
   }
+#prevBtn svg{
+  transform: scale(-1,1);
+}
   
   /* Make circles that indicate the steps of the form: */
   .step {
@@ -69,3 +83,7 @@ select.davi-theme{
   .step.finish {
     background-color: #04AA6D;
   }
+
+.davi-theme{
+  height: 50px;
+}
