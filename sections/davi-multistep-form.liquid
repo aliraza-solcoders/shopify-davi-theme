@@ -766,6 +766,7 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer=""></script>
 <script src="{{ 'davi-script.js' | asset_url }}" defer="defer"></script>
+{%if customer %}
 <div class="loader" style="text-align:center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
   <div class="container davi-customize">
   <div id="form" style="display:none; padding : 20px;">
@@ -783,12 +784,12 @@
       <div class="custom-flex-wrapper">
         <div class="custom-flex-item">
       {% for block in section.blocks %}    
-{% if block.settings.davi_field_show == 'step1' %}
-{% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
-<div class="custom-form-group">
-<label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
-{% endunless %}
-{% endif %}
+    {% if block.settings.davi_field_show == 'step1' %}
+    {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
+    <div class="custom-form-group">
+    <label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
+    {% endunless %}
+    {% endif %}
 
         {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "phone" %}
             <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %}>
@@ -889,11 +890,11 @@
           <input type="text" class="davi-theme custom-address" name="davi_input_address" placeholder="address"  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}><br>
           <input type="text" class="davi-theme custom-address" name="davi_input_appartment_no" placeholder="appartment_no"  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}> <input type="text" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} class="davi-theme custom-address" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" class="davi-theme custom-address" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} name="davi_input_state" placeholder="state"  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %}>
         {% endif %}
-{% if block.settings.davi_field_show == 'step1' %}
-{% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
-</div>
-{% endunless %}
-{% endif %}
+    {% if block.settings.davi_field_show == 'step1' %}
+    {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
+    </div>
+    {% endunless %}
+    {% endif %}
       {% endfor %}
         </div>
         <div class="custom-flex-item">
@@ -942,121 +943,121 @@
 
     <div class="tab step2" >
       <h3 class="custom-step-title">{{ section.settings.step2_title }}</h3>
-<div class="custom-flex-wrapper">
-<div class="custom-flex-item">
-      {% for block in section.blocks %}    
-{% if block.settings.davi_field_show == 'step2' %}
-{% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
-<div class="custom-form-group">
-<label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
-{% endunless %}
-{% endif %}
+    <div class="custom-flex-wrapper">
+    <div class="custom-flex-item">
+          {% for block in section.blocks %}    
+            {% if block.settings.davi_field_show == 'step2' %}
+            {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
+            <div class="custom-form-group">
+            <label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
+            {% endunless %}
+            {% endif %}
 
-                {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "phone" %}
-            <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
+                    {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "phone" %}
+                <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
 
-            <div class="custom-multiple-dropdown">
-            <div class="phone-flex-wrapper">
-              <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
-          <ul class="custom-multiple-dropdown-list custom-phone-list"></ul>
-          <input type="number" class="custom-phone-inp davi-theme" />
-            </div>
-              
-            </div>
-        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
-            <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
-        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "email" %}
-          <input type="email" class="davi-theme" name="davi_input_email"  {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "email"  and block.settings.davi_field_required == true %}  required {% endif %}>
-        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "date" %}
-          <input type="text" class="davi-theme date" name="davi_input_date" class="date" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "date" and block.settings.davi_field_required == true %}  required {% endif %}>
-          {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "dropdown" %}
-          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-          <select name="davi_dropdown" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "dropdown" and block.settings.davi_field_required == true %}  required {% endif %}>
-              {% for option in dropdown %}
-                <option>{{ option }}</option>
-              {% endfor %}
-            </select>
-            {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multipledropdown" %}
-              {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-              <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multipledropdown"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
-                {% for option in dropdown %}
-                  <option>{{ option }}</option>
-                {% endfor %}
-              </select>
-          {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "dropdown_file" %}
-          {% assign dropdown =  block.settings.davi_field_value | split: "," %}
-              {% assign imgs = block.settings.davi_field_image | split: ',' %}
-              <div class="custom-multiple-dropdown">
-                  <select name="davi_dropdown" class="custom-single-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "dropdown_file" and block.settings.davi_field_required == true %}  required {% endif %}>
-              {% for option in dropdown %}
-                <option>{{ option }}</option>
-              {% endfor %}
-            </select>
-                <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] | asset_url }}" /> <span>{{ dropdown[0] }}</span></button>
-                <ul class="custom-multiple-dropdown-list">
-                  {% for option in dropdown %}
-                    <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
-                  {% endfor %}
-                </ul>
-              </div>
-          {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multipledropdown_file" %}
-  
-             {% assign imgs = block.settings.davi_field_image | split: ',' %}
-              <div class="custom-multiple-2-dropdown">
-             <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multipledropdown_file"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
-              {% for option in dropdown %}
-                <option value="{{ option }}" data-img="{{ imgs[forloop.index0] | asset_url }}">{{ option }}</option>
-              {% endfor %}
-            </select>
-                <button type="button" class="custom-multiple-2-dropdown-main">
-                  <div class="custom-multiple-2-badge-wrapper">
-          
-                  </div>
-                  </button>
-                <ul class="custom-multiple-2-dropdown-list">
-                  {% for option in dropdown %}
-                    <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
-                  {% endfor %}
-                </ul>
-              </div>
-          {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "products" %}
-            {% comment %} <select name="davi_products" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "products" and block.settings.davi_field_required == true %}  required {% endif %} multiple>
-              {% for product in collections['all'].products %}
-                  <option title="{{ product.sku }}">{{ product.title }}</option>
-              {% endfor %}
-            </select> {% endcomment %}
-  
-             {% assign imgs = block.settings.davi_field_image | split: ',' %}
-              <div class="custom-multiple-2-dropdown">
-             <select name="davi_products" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "products"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
-              {% for product in collections['all'].products %}
-                <option value="{{ product.title | escape }}" data-img="{{ product | img_url: '100x' }}">{{ product.title | escape }}</option>
-              {% endfor %}
-            </select>
-                <button type="button" class="custom-multiple-2-dropdown-main">
-                  <div class="custom-multiple-2-badge-wrapper">
+                <div class="custom-multiple-dropdown">
+                <div class="phone-flex-wrapper">
+                  <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
+              <ul class="custom-multiple-dropdown-list custom-phone-list"></ul>
+              <input type="number" class="custom-phone-inp davi-theme" />
+                </div>
                   
-                  </div>
-                  </button>
-                <ul class="custom-multiple-2-dropdown-list">
-                  {% for product in collections['all'].products %}
-                    <li><img src="{{ product | img_url: '100x' }}" /> <span>{{ product.title | escape }}</span></li>
+                </div>
+            {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
+                <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
+            {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "email" %}
+              <input type="email" class="davi-theme" name="davi_input_email"  {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "email"  and block.settings.davi_field_required == true %}  required {% endif %}>
+            {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "date" %}
+              <input type="text" class="davi-theme date" name="davi_input_date" class="date" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "date" and block.settings.davi_field_required == true %}  required {% endif %}>
+              {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "dropdown" %}
+              {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+              <select name="davi_dropdown" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "dropdown" and block.settings.davi_field_required == true %}  required {% endif %}>
+                  {% for option in dropdown %}
+                    <option>{{ option }}</option>
                   {% endfor %}
-                </ul>
-              </div>
-  
-  
-        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" %}
-          <input type="text" class="davi-theme custom-address" name="davi_input_address" placeholder="address"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}>
-          <input type="text" class="davi-theme custom-address" name="davi_input_appartment_no" placeholder="appartment_no"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}>
-    <input type="text" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} class="davi-theme custom-address" name="davi_input_zip_code" placeholder="zip_code" >
-    <input type="text" class="davi-theme custom-address" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} name="davi_input_state" placeholder="state"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
-        {% endif %}
-{% if block.settings.davi_field_show == 'step2' %}
-{% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
-</div>
-{% endunless %}
-{% endif %}
+                </select>
+                {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multipledropdown" %}
+                  {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+                  <select name="davi_multiple_dropdown" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multipledropdown"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+                    {% for option in dropdown %}
+                      <option>{{ option }}</option>
+                    {% endfor %}
+                  </select>
+              {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "dropdown_file" %}
+              {% assign dropdown =  block.settings.davi_field_value | split: "," %}
+                  {% assign imgs = block.settings.davi_field_image | split: ',' %}
+                  <div class="custom-multiple-dropdown">
+                      <select name="davi_dropdown" class="custom-single-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "dropdown_file" and block.settings.davi_field_required == true %}  required {% endif %}>
+                  {% for option in dropdown %}
+                    <option>{{ option }}</option>
+                  {% endfor %}
+                </select>
+                    <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] | asset_url }}" /> <span>{{ dropdown[0] }}</span></button>
+                    <ul class="custom-multiple-dropdown-list">
+                      {% for option in dropdown %}
+                        <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+              {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "multipledropdown_file" %}
+      
+                {% assign imgs = block.settings.davi_field_image | split: ',' %}
+                  <div class="custom-multiple-2-dropdown">
+                <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multipledropdown_file"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+                  {% for option in dropdown %}
+                    <option value="{{ option }}" data-img="{{ imgs[forloop.index0] | asset_url }}">{{ option }}</option>
+                  {% endfor %}
+                </select>
+                    <button type="button" class="custom-multiple-2-dropdown-main">
+                      <div class="custom-multiple-2-badge-wrapper">
+              
+                      </div>
+                      </button>
+                    <ul class="custom-multiple-2-dropdown-list">
+                      {% for option in dropdown %}
+                        <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+              {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "products" %}
+                {% comment %} <select name="davi_products" class="form-control select2 davi-theme" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "products" and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+                  {% for product in collections['all'].products %}
+                      <option title="{{ product.sku }}">{{ product.title }}</option>
+                  {% endfor %}
+                </select> {% endcomment %}
+      
+                {% assign imgs = block.settings.davi_field_image | split: ',' %}
+                  <div class="custom-multiple-2-dropdown">
+                <select name="davi_products" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "products"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
+                  {% for product in collections['all'].products %}
+                    <option value="{{ product.title | escape }}" data-img="{{ product | img_url: '100x' }}">{{ product.title | escape }}</option>
+                  {% endfor %}
+                </select>
+                    <button type="button" class="custom-multiple-2-dropdown-main">
+                      <div class="custom-multiple-2-badge-wrapper">
+                      
+                      </div>
+                      </button>
+                    <ul class="custom-multiple-2-dropdown-list">
+                      {% for product in collections['all'].products %}
+                        <li><img src="{{ product | img_url: '100x' }}" /> <span>{{ product.title | escape }}</span></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+      
+      
+            {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" %}
+              <input type="text" class="davi-theme custom-address" name="davi_input_address" placeholder="address"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}>
+              <input type="text" class="davi-theme custom-address" name="davi_input_appartment_no" placeholder="appartment_no"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}>
+        <input type="text" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} class="davi-theme custom-address" name="davi_input_zip_code" placeholder="zip_code" >
+        <input type="text" class="davi-theme custom-address" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} name="davi_input_state" placeholder="state"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
+            {% endif %}
+    {% if block.settings.davi_field_show == 'step2' %}
+    {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
+    </div>
+    {% endunless %}
+    {% endif %}
       {% endfor %}
     </div>
         <div class="custom-flex-item">
@@ -1106,14 +1107,14 @@
     <div class="tab step3" >
       <h3 class="custom-step-title">{{ section.settings.step3_title }}</h3>
       <div class="custom-flex-wrapper">
-<div class="custom-flex-item">
-      {% for block in section.blocks %}    
-{% if block.settings.davi_field_show == 'step3' %}
-{% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
-<div class="custom-form-group">
-<label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
-{% endunless %}
-{% endif %}
+        <div class="custom-flex-item">
+              {% for block in section.blocks %}    
+        {% if block.settings.davi_field_show == 'step3' %}
+        {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
+        <div class="custom-form-group">
+        <label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
+        {% endunless %}
+        {% endif %}
 
                 {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "phone" %}
             <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %}>
@@ -1214,12 +1215,12 @@
           <input type="text" class="davi-theme custom-address" name="davi_input_address" placeholder="address"  {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}><br>
           <input type="text" class="davi-theme custom-address" name="davi_input_appartment_no" placeholder="appartment_no"  {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %}> <input type="text" {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} class="davi-theme custom-address" name="davi_input_zip_code" placeholder="zip_code" > <input type="text" class="davi-theme custom-address" {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "address" and block.settings.davi_field_required == true %}  required {% endif %} name="davi_input_state" placeholder="state"  {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %}>
         {% endif %}
-{% if block.settings.davi_field_show == 'step3' %}
-{% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
-</div>
-{% endunless %}
-{% endif %}
-      {% endfor %}
+          {% if block.settings.davi_field_show == 'step3' %}
+          {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" %}
+          </div>
+          {% endunless %}
+          {% endif %}
+                {% endfor %}
     </div>    
         <div class="custom-flex-item">
           {% for block in section.blocks %}    
@@ -1274,14 +1275,17 @@
   <div style="overflow:auto; margin-top:20px;">
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
       <button type="button" class="davi-theme" id="prevBtn" onclick="nextPrev(-1)"><svg width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.2031 19.5L20.0538 13L12.2031 6.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg> Previous</button>
+    <path d="M12.2031 19.5L20.0538 13L12.2031 6.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg> Previous</button>
       <button type="button" class="davi-theme" id="nextBtn" onclick="nextPrev(1)">Next</button>
     </div>
   </div>
   </form>
   </div>
   </div>
+{% else %}
+    <p>To view your quote, Please {{ 'Login' | customer_login_link }}.</p>
+{% endif %}
 {% schema %}
   {
   "name": "Davi Multistep Form",
