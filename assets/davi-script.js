@@ -6,6 +6,7 @@ function showTab(n) {
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
   //... and fix the Previous/Next buttons:
+document.querySelector(".custom-steps-wrapper").setAttribute("data-step", n+1);
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
