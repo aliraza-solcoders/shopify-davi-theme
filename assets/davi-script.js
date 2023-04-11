@@ -242,12 +242,16 @@ function form_submit(){
     formData.append('file', file);
     // for file end
     // for files start
-    // var davi_input_files = {};
-    // jQuery( "input[name=davi_input_files]" ).each(function( index ) {
-    //   label = $(this).parent().prev().text();
-    // })
-    // davi_input_files['label'] = label;
-    // davi_input_files['type'] = 'files';
+    var davi_input_files = {};
+    jQuery( "input[name=davi_input_files]" ).each(function( index ) {
+      label = $(this).parent().prev().text();
+    })
+    var totalfiles = document.getElementById('files').files.length;
+    for (var index = 0; index < totalfiles; index++) {
+      formData.append("files[]", document.getElementById('files').files[index]);
+    }
+    davi_input_files['label'] = label;
+    davi_input_files['type'] = 'files';
     // const files = $('input[name="davi_input_files"]').prop('files');
     // formData.append('files', files);
     // for files end
