@@ -789,16 +789,14 @@
       <div class="custom-flex-wrapper">
         <div class="custom-flex-item">
       {% for block in section.blocks %}    
-    {% if block.settings.davi_field_show == 'step1' %}
-    {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" or block.settings.davi_field_type == "hidden" %}
-    <div class="custom-form-group">
-    <label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
-    {% endunless %}
-    {% endif %}
-
-  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "phone" %}
+        {% if block.settings.davi_field_show == 'step1' %}
+          {% unless block.settings.davi_field_type == "pdf" or block.settings.davi_field_type == "file" or block.settings.davi_field_type == "multiplefile" or block.settings.davi_field_type == "hidden" %}
+            <div class="custom-form-group">
+            <label class="custom-form-label">{{ block.settings.davi_field_label }}</label>
+          {% endunless %}
+        {% endif %}
+        {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "phone" %}
             {% comment %} <input type="text" class="davi-theme" name="davi_input_phone"> {% endcomment %}
-
             <div class="custom-multiple-dropdown">
               <div class="phone-flex-wrapper">
                 <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
@@ -807,8 +805,12 @@
               </div>
             </div>
           
+        {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "terms_and_condition" %}
+          {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_value != '' %}
+            <p>{{ block.settings.davi_field_value }}</p>
+          {% endif%}
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "hidden" %}
-            <input type="hidden" class="davi-theme" name="davi_input_text"  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %} {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_value != '' %}  value="{{ block.settings.davi_field_value }}" {% endif %}>
+            <input type="hidden" class="davi-theme" name="davi_input_hidden"  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %} {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_value != '' %}  value="{{ block.settings.davi_field_value }}" {% endif %}>
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
             <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %}>
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "email" %}
@@ -970,8 +972,12 @@
                   </div>
                 </div>
 
+              {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "terms_and_condition" %}
+                {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_value != '' %}
+                  <p>{{ block.settings.davi_field_value }}</p>
+                {% endif%}
             {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "hidden" %}
-                <input type="hidden" class="davi-theme" name="davi_input_text"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %} {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_value != '' %}  value="{{ block.settings.davi_field_value }}" {% endif %}>                
+                <input type="hidden" class="davi-theme" name="davi_input_hidden"  {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %} {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_value != '' %}  value="{{ block.settings.davi_field_value }}" {% endif %}>                
             {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
                 <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
             {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "email" %}
@@ -1124,9 +1130,8 @@
         {% endunless %}
         {% endif %}
 
-                {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "phone" %}
+        {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "phone" %}
             <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %}>
-
             <div class="custom-multiple-dropdown">
               <div class="phone-flex-wrapper">
                 <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
@@ -1135,8 +1140,12 @@
               </div>
             </div>
 
-          {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "hidden" %}
-            <input type="hidden" class="davi-theme" name="davi_input_text"  {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %} {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_value != '' %}  value="{{ block.settings.davi_field_value }}" {% endif %}>            
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "terms_and_condition" %}
+            {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_value != '' %}
+              <p>{{ block.settings.davi_field_value }}</p>
+            {% endif%}
+        {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "hidden" %}
+            <input type="hidden" class="davi-theme" name="davi_input_hidden"  {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %} {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_value != '' %}  value="{{ block.settings.davi_field_value }}" {% endif %}>            
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "text" %}
             <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %}>
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "email" %}

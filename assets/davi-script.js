@@ -129,6 +129,15 @@ function form_submit(){
     field_settings.push(davi_input_text);
 
   });
+  jQuery( "input[name=davi_input_hidden]" ).each(function( index ) {
+    label = $(this).prev().text();
+    var davi_input_hidden = {};
+    davi_input_hidden['label'] = label;
+    davi_input_hidden['type'] = 'hidden';
+    davi_input_hidden['value'] = $( this ).val();
+    field_settings.push(davi_input_hidden);
+
+  });
   jQuery( "input[name=davi_input_email]" ).each(function( index ) {
     label = $(this).prev().text();
     var davi_input_email = {};
@@ -144,6 +153,14 @@ function form_submit(){
     davi_input_date['type'] = 'text';
     davi_input_date['value'] = $( this ).val();
     field_settings.push(davi_input_date);
+  });
+  jQuery( "input[name=davi_input_phone]" ).each(function( index ) {
+    label = $(this).parent().parent().prev().text();
+    var davi_input_phone = {};
+    davi_input_phone['label'] = label;
+    davi_input_phone['type'] = 'phone';
+    davi_input_phone['value'] = $( this ).val();
+    field_settings.push(davi_input_phone);
   });
   jQuery( "select[name=davi_products]" ).each(function( index ) {
     label = $(this).parent().prev().text();
