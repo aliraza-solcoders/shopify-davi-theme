@@ -772,7 +772,9 @@
   Customizer is closed
 {% endif %}
 
-<div class="loader" style="text-align:center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
+<div class="loader" style="text-align:center">
+  <img src="https://daviapp.solcoder.com/public/uploads/loader/Loader.gif" width="200" height="200">
+</div>
   <div class="container davi-customize">
   <div id="form" style="display:none; padding : 20px;">
     <h2>{{ section.settings.section_title }}</h2>
@@ -961,18 +963,16 @@
             {% endunless %}
             {% endif %}
 
-              {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "phone" %}
-                <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
-
+            {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "phone" %}
                 <div class="custom-multiple-dropdown">
                   <div class="phone-flex-wrapper">
                     <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
                     <ul class="custom-multiple-dropdown-list custom-phone-list"></ul>
-                    <input type="number" class="custom-phone-inp davi-theme" />
+                    <input type="number" class="custom-phone-inp davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}/>
                   </div>
                 </div>
 
-              {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "terms_and_condition" %}
+            {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "terms_and_condition" %}
                 {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_value != '' %}
                   <p>{{ block.settings.davi_field_value }}</p>
                 {% endif%}
@@ -1131,15 +1131,13 @@
         {% endif %}
 
         {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "phone" %}
-            <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %}>
-            <div class="custom-multiple-dropdown">
-              <div class="phone-flex-wrapper">
-                <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
-                <ul class="custom-multiple-dropdown-list custom-phone-list"></ul>
-                <input type="number" class="custom-phone-inp davi-theme" />
-              </div>
+          <div class="custom-multiple-dropdown">
+            <div class="phone-flex-wrapper">
+              <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
+              <ul class="custom-multiple-dropdown-list custom-phone-list"></ul>
+              <input type="number" class="custom-phone-inp davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_required == true %}  required {% endif %}/>
             </div>
-
+          </div>
         {% elsif block.settings.davi_field_show == 'step3' and block.settings.davi_field_type == "terms_and_condition" %}
             {% if block.settings.davi_field_show == 'step3' and block.settings.davi_field_value != '' %}
               <p>{{ block.settings.davi_field_value }}</p>
