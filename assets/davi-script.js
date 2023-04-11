@@ -243,7 +243,7 @@ function form_submit(){
     // for file end
     // for files start
     var davi_input_files = {};
-    jQuery( "input[name=davi_input_files[]  ]" ).each(function( index ) {
+    jQuery( "input[name=davi_input_files[]]" ).each(function( index ) {
       label = $(this).parent().prev().text();
     })
     var totalfiles = $('input[name="davi_input_files[]"]').prop('files').length;
