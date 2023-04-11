@@ -766,10 +766,10 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer=""></script>
 <script src="{{ 'davi-script.js' | asset_url }}" defer="defer"></script>
-{%if  settings.preview  or customer %}
+{%if settings.enable_product_designer  or customer %}
 
-{%unless settings.preview  %}
-  <div class="loader" style="text-align:center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
+{%unless settings.enable_product_designer  %}
+<div class="loader" style="text-align:center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
 {% endunless %}
   <div class="container davi-customize">
   <div id="form" style="display:none; padding : 20px;">
