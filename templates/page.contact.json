@@ -27,7 +27,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Email",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "email",
             "davi_field_value": "",
             "davi_field_image": "",
@@ -40,7 +40,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Date of Birth",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "date",
             "davi_field_value": "",
             "davi_field_image": "",
@@ -66,7 +66,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "PDF File",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "pdf",
             "davi_field_value": "",
             "davi_field_image": "",
@@ -79,7 +79,7 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Single File",
-            "davi_field_show": "step1",
+            "davi_field_show": "step3",
             "davi_field_type": "file",
             "davi_field_value": "",
             "davi_field_image": "",
@@ -105,9 +105,35 @@
           "type": "davi_field",
           "settings": {
             "davi_field_label": "Phone number",
-            "davi_field_show": "step1",
+            "davi_field_show": "step2",
             "davi_field_type": "phone",
             "davi_field_value": "",
+            "davi_field_image": "",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
+          }
+        },
+        "ddb4bbf9-a879-4bf9-8033-d28541cde8ac": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Step 1",
+            "davi_field_show": "step1",
+            "davi_field_type": "terms_and_condition",
+            "davi_field_value": "Terms and conditions text",
+            "davi_field_image": "",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
+          }
+        },
+        "853ea655-ba00-48d5-841d-cba2855149be": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "Showing Some Images",
+            "davi_field_show": "step1",
+            "davi_field_type": "images",
+            "davi_field_value": "https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png",
             "davi_field_image": "",
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
@@ -123,7 +149,9 @@
         "f4370984-5301-4c7a-8d11-02e7735c98a8",
         "c1fa3f96-a889-418b-88f8-d09ec6eca176",
         "07b87b18-7147-447f-bb1f-fcc7fd40fc48",
-        "986ed2a7-3ecf-45d9-9bac-7cd7310ccef5"
+        "986ed2a7-3ecf-45d9-9bac-7cd7310ccef5",
+        "ddb4bbf9-a879-4bf9-8033-d28541cde8ac",
+        "853ea655-ba00-48d5-841d-cba2855149be"
       ],
       "settings": {
         "section_title": "Multistep Form",
