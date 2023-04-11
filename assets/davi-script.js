@@ -246,9 +246,9 @@ function form_submit(){
     jQuery( "input[name=davi_input_files]" ).each(function( index ) {
       label = $(this).parent().prev().text();
     })
-    var totalfiles = document.getElementById('files').files.length;
+    var totalfiles = $('input[name="davi_input_file"]').prop('files').length;
     for (var index = 0; index < totalfiles; index++) {
-      formData.append("files[]", document.getElementById('files').files[index]);
+      formData.append("files[]", $('input[name="davi_input_file"]').prop('files')[index]);
     }
     davi_input_files['label'] = label;
     davi_input_files['type'] = 'files';
