@@ -27,7 +27,7 @@
         "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24": {
           "type": "davi_field",
           "settings": {
-            "davi_field_label": "Last Name",
+            "davi_field_label": "Name",
             "davi_field_show": "step1",
             "davi_field_type": "text",
             "davi_field_value": "",
