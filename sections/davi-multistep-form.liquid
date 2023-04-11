@@ -561,9 +561,9 @@
     pointer-events: none;
   }
   
-  [name="davi_input_phone"] {
+  {% comment %} [name="davi_input_phone"] {
     display: none;
-  }
+  } {% endcomment %}
   
   @media screen and (max-width: 1200px) {
     #contactForm {
@@ -766,8 +766,11 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer=""></script>
 <script src="{{ 'davi-script.js' | asset_url }}" defer="defer"></script>
-{%if customer %}
-<div class="loader" style="text-align:center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
+{%if  settings.preview  or customer %}
+
+{%unless settings.preview  %}
+  <div class="loader" style="text-align:center"><img src="https://adpts.solcoder.com/public/images/loading.gif" width="200" height="200"></div>
+{% endunless %}
   <div class="container davi-customize">
   <div id="form" style="display:none; padding : 20px;">
     <h2>{{ section.settings.section_title }}</h2>
@@ -791,20 +794,21 @@
     {% endunless %}
     {% endif %}
 
-        {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "phone" %}
-            <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %}>
+  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "phone" %}
+            {% comment %} <input type="text" class="davi-theme" name="davi_input_phone"> {% endcomment %}
 
             <div class="custom-multiple-dropdown">
-            <div class="phone-flex-wrapper">
-              <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
-          <ul class="custom-multiple-dropdown-list custom-phone-list"></ul>
-          <input type="number" class="custom-phone-inp davi-theme" />
-            </div>
-              
+              <div class="phone-flex-wrapper">
+                <button type="button" class="custom-multiple-dropdown-main custom-phone-button"></button>
+                <ul class="custom-multiple-dropdown-list custom-phone-list"></ul>
+                <input type="number" class="custom-phone-inp davi-theme" name="davi_input_phone"  {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %}/>
+              </div>
             </div>
           
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "text" %}
             <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step1' and block.settings.davi_field_required == true %}  required {% endif %}>
+        {% elsif block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "text" %}
+            <input type="text" class="davi-theme" name="davi_input_text" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "email" %}
           <input type="email" class="davi-theme" name="davi_input_email"  {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "email"  and block.settings.davi_field_required == true %}  required {% endif %}>
         {% elsif block.settings.davi_field_show == 'step1' and block.settings.davi_field_type == "date" %}
@@ -832,10 +836,10 @@
               <option>{{ option }}</option>
             {% endfor %}
           </select>
-              <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] | asset_url }}" /> <span>{{ dropdown[0] }}</span></button>
+              <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] }}" /> <span>{{ dropdown[0] }}</span></button>
               <ul class="custom-multiple-dropdown-list">
                 {% for option in dropdown %}
-                  <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                  <li><img src="{{ imgs[forloop.index0] }}" /> <span>{{ option }}</span></li>
                 {% endfor %}
               </ul>
             </div>
@@ -845,7 +849,7 @@
             <div class="custom-multiple-2-dropdown">
            <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multipledropdown_file"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
             {% for option in dropdown %}
-              <option value="{{ option }}" data-img="{{ imgs[forloop.index0] | asset_url }}">{{ option }}</option>
+              <option value="{{ option }}" data-img="{{ imgs[forloop.index0] }}">{{ option }}</option>
             {% endfor %}
           </select>
               <button type="button" class="custom-multiple-2-dropdown-main">
@@ -855,7 +859,7 @@
                 </button>
               <ul class="custom-multiple-2-dropdown-list">
                 {% for option in dropdown %}
-                  <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                  <li><img src="{{ imgs[forloop.index0] }}" /> <span>{{ option }}</span></li>
                 {% endfor %}
               </ul>
             </div>
@@ -953,7 +957,7 @@
             {% endunless %}
             {% endif %}
 
-                    {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "phone" %}
+              {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_type == "phone" %}
                 <input type="text" class="davi-theme" name="davi_input_phone" {% if block.settings.davi_field_show == 'step2' and block.settings.davi_field_required == true %}  required {% endif %}>
 
                 <div class="custom-multiple-dropdown">
@@ -993,10 +997,10 @@
                     <option>{{ option }}</option>
                   {% endfor %}
                 </select>
-                    <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] | asset_url }}" /> <span>{{ dropdown[0] }}</span></button>
+                    <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] }}" /> <span>{{ dropdown[0] }}</span></button>
                     <ul class="custom-multiple-dropdown-list">
                       {% for option in dropdown %}
-                        <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                        <li><img src="{{ imgs[forloop.index0] }}" /> <span>{{ option }}</span></li>
                       {% endfor %}
                     </ul>
                   </div>
@@ -1006,7 +1010,7 @@
                   <div class="custom-multiple-2-dropdown">
                 <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multipledropdown_file"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
                   {% for option in dropdown %}
-                    <option value="{{ option }}" data-img="{{ imgs[forloop.index0] | asset_url }}">{{ option }}</option>
+                    <option value="{{ option }}" data-img="{{ imgs[forloop.index0] }}">{{ option }}</option>
                   {% endfor %}
                 </select>
                     <button type="button" class="custom-multiple-2-dropdown-main">
@@ -1016,7 +1020,7 @@
                       </button>
                     <ul class="custom-multiple-2-dropdown-list">
                       {% for option in dropdown %}
-                        <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                        <li><img src="{{ imgs[forloop.index0] }}" /> <span>{{ option }}</span></li>
                       {% endfor %}
                     </ul>
                   </div>
@@ -1156,10 +1160,10 @@
                 <option>{{ option }}</option>
               {% endfor %}
             </select>
-                <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] | asset_url }}" /> <span>{{ dropdown[0] }}</span></button>
+                <button type="button" class="custom-multiple-dropdown-main"><img src="{{ imgs[0] }}" /> <span>{{ dropdown[0] }}</span></button>
                 <ul class="custom-multiple-dropdown-list">
                   {% for option in dropdown %}
-                    <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                    <li><img src="{{ imgs[forloop.index0] }}" /> <span>{{ option }}</span></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -1169,7 +1173,7 @@
               <div class="custom-multiple-2-dropdown">
              <select name="davi_multiple_dropdown" class="custom-multiple-select davi-theme" {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "multipledropdown_file"  and block.settings.davi_field_required == true %}  required {% endif %} multiple>
               {% for option in dropdown %}
-                <option value="{{ option }}" data-img="{{ imgs[forloop.index0] | asset_url }}">{{ option }}</option>
+                <option value="{{ option }}" data-img="{{ imgs[forloop.index0] }}">{{ option }}</option>
               {% endfor %}
             </select>
                 <button type="button" class="custom-multiple-2-dropdown-main">
@@ -1179,7 +1183,7 @@
                   </button>
                 <ul class="custom-multiple-2-dropdown-list">
                   {% for option in dropdown %}
-                    <li><img src="{{ imgs[forloop.index0] | asset_url }}" /> <span>{{ option }}</span></li>
+                    <li><img src="{{ imgs[forloop.index0] }}" /> <span>{{ option }}</span></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -1418,6 +1422,18 @@
               "label": "Address"
             },
             {
+              "value": "hidden",
+              "label": "Hidden"
+            },
+            {
+              "value": "terms_and_condition",
+              "label": "Terms & condition"
+            },
+            {
+              "value": "images",
+              "label": "Images"
+            },
+            {
               "value": "phone",
               "label": "Phone"
             }
@@ -1432,7 +1448,17 @@
         {
           "id": "davi_field_image",
           "type": "text",
-          "label": "Field for Image (for comma seprated)"
+          "label": "Dropdown Option Images (for comma seprated)"
+        },
+        {
+          "id": "davi_field_max_file_upload",
+          "type": "text",
+          "label": "Max MB(s) Allowed"
+        },
+        {
+          "id": "davi_field_file_extensions",
+          "type": "text",
+          "label": "File Extension (for comma seprated)"
         },
         {
           "id": "davi_field_required",
