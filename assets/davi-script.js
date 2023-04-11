@@ -276,10 +276,10 @@ function form_submit(){
       field_settings.push(davi_input_file);
     }
 
-    // if(data.files){
-    //   davi_input_files['value'] = data.files;
-    //   field_settings.push(davi_input_files);
-    // }
+    if(data.files){
+      davi_input_files['value'] = data.files;
+      field_settings.push(davi_input_files);
+    }
         var form_type = $( 'input[name=davi_form_type]' ).val();
         var shop = $('#shop').val();
         var data = {
