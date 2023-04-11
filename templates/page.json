@@ -18,7 +18,7 @@
             "davi_field_show": "step1",
             "davi_field_type": "dropdown_file",
             "davi_field_value": "html,css,react",
-            "davi_field_image": "demo1.png,demo1.png,Demo2.png",
+            "davi_field_image": "https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png,https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png,https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png",
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
             "davi_field_required": true
