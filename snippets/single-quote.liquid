@@ -27,6 +27,7 @@
                     <span class="order_id" style="display:none"><strong>Order ID</strong>: <span id='order_id'></span>  </span>
                     <span><strong>Total Price</strong>: <span id='total_price'></span> <span class='currency'></span>  </span>
                     <button class="btn float-right btn-sm" style="display:none" id="checkout">Accept Quotation</button>
+                    <button class="btn float-right btn-sm" style="display:none" id="cancel_quotation">Cancel Quotation</button>
                 </div>
             </div>
             <div class="row p-3">
@@ -193,14 +194,21 @@
                     jQuery("#checkout").html('Accept Quotation');
                     jQuery("#checkout").show();
                 }
+                else if(response.status  == 'quotation_expired' && expiry_date > today){
+                    
+                }
 
                 var status ;
                 if(response.status  == 'pending'){
-                    var status = '<span class="badge" style="background:'+response.settings.quotation_pending+'">Pending</span>';
+                    var status = '<span class="badge" style="background:'+response.settings.quotation_pending+'">Quotation Pending</span>';
                 } else if(response.status  == 'quotation_ready'){
                     var status = '<span class="badge" style="background:'+response.settings.quotation_ready+'">Quotation Ready</span>';
                 } else if(response.status  == 'quotation_accepted'){
                     var status = '<span class="badge" style="background:'+response.settings.quotation_accepted+'">Quotation Accepted</span>';
+                } else if(response.status  == 'quotation_revised'){
+                    var status = '<span class="badge" style="background:'+response.settings.quotation_revised+'">Quotation Revised</span>';
+                } else if(response.status  == 'quotation_expired' ||  expiry_date <>> today){
+                    var status = '<span class="badge" style="background:'+response.settings.quotation_expired+'">Quotation Expired</span>';
                 }
                 jQuery("#quotation_status").html(status);
                 jQuery("#total_price").html(response.total);
