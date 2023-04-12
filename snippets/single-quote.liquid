@@ -194,10 +194,10 @@
                     jQuery("#checkout").html('Accept Quotation');
                     jQuery("#checkout").show();
                 }
-                else if(response.status  == 'quotation_expired' && expiry_date > today){
+                if((response.status  == 'pending' || response.status  == 'quotation_ready' || response.status  == 'quotation_revised') && expiry_date > today){
                     
+                    jQuery("#cancel_quotation").show();   
                 }
-
                 var status ;
                 if(response.status  == 'pending'){
                     var status = '<span class="badge" style="background:'+response.settings.quotation_pending+'">Quotation Pending</span>';
@@ -227,6 +227,32 @@
             })
       }
       
+      $('#cancel_quotation').on('click', function(){
+        $('#single-quotation').hide();
+        jQuery('.loader').show();
+        var cancel = {
+            ref_number : ref_number,
+        }
+        fetch("/apps/sdta/cancel_quotation", {
+            method: "POST",
+            body: JSON.stringify(cancel),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            Swal.fire(
+                'Canceled Quotation!',
+                'Your requested quotation is cancelled',
+                'success'
+              )
+            jQuery('.loader').hide();
+            location.href = 'https://'+shop+'/pages/quotes';
+        });
+    });
       $('#checkout').on('click', function(){
         $('#single-quotation').hide();
         jQuery('.loader').show();
