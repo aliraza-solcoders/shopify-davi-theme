@@ -199,7 +199,7 @@
             "davi_field_label": "Images",
             "davi_field_show": "step1",
             "davi_field_type": "images",
-            "davi_field_value": "https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png,https:\/\/placehold.co\/200x200\/000000\/FFFFFF.png,https:\/\/placehold.co\/100x200\/000000\/FFFFFF.png",
+            "davi_field_value": "https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png",
             "davi_field_image": "",
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
