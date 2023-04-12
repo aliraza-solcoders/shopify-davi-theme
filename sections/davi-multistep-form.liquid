@@ -771,7 +771,7 @@
 {% else %}
   Customizer is closed
 {% endif %}
-
+{% if customer %}
 <div class="loader" style="text-align:center">
   <img src="https://daviapp.solcoder.com/public/uploads/loader/Loader.gif" width="200" height="200">
 </div>
@@ -1305,7 +1305,9 @@
   </form>
   </div>
   </div>
+  {% else %}
     <p>To view your quote, Please {{ 'Login' | customer_login_link }}.</p>
+{% endif %}
 {% schema %}
   {
   "name": "Davi Multistep Form",
