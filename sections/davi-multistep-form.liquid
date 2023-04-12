@@ -920,7 +920,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
               <input type="file" id="{{ block.id }}" class="davi-theme" name="davi_input_pdf" accept="application/pdf"  {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "pdf" and block.settings.davi_field_required == true %}  required {% endif %}>
             </div>
             <div class="custom-form-file-output"></div>
@@ -932,7 +932,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
           <input type="file" class="davi-theme" name="davi_input_file"  {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
@@ -944,7 +944,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
           <input type="file" class="davi-theme" name="davi_input_files[]" multiple   {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
@@ -1093,7 +1093,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
               <input type="file" id="{{ block.id }}" class="davi-theme" name="davi_input_pdf" accept="application/pdf"  {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "pdf" and block.settings.davi_field_required == true %}  required {% endif %}>
             </div>
             <div class="custom-form-file-output"></div>
@@ -1105,7 +1105,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
           <input type="file" class="davi-theme" name="davi_input_file"  {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
@@ -1117,7 +1117,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
           <input type="file" class="davi-theme" name="davi_input_files[]" multiple   {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
@@ -1264,7 +1264,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
               <input type="file" id="{{ block.id }}" class="davi-theme" name="davi_input_pdf" accept="application/pdf"  {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "pdf" and block.settings.davi_field_required == true %}  required {% endif %}>
             </div>
             <div class="custom-form-file-output"></div>
@@ -1276,7 +1276,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
           <input type="file" class="davi-theme" name="davi_input_file"  {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
@@ -1288,7 +1288,7 @@
             <h3>{{ block.settings.davi_field_label }}</h3>
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
-              <p><strong>Browse File</strong> or drag and drop PDF, JPG, oder PNG (max. 5MB)</p>
+              <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
           <input type="file" class="davi-theme" name="davi_input_files[]" multiple   {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
