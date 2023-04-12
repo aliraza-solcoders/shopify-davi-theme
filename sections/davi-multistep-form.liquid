@@ -619,6 +619,10 @@
                 }
                 outputDiv.innerHTML = data;
             } else {
+                var ext = $('#my_file_field').val().split('.').pop().toLowerCase();
+                if($.inArray(ext, ['gif','png','jpg','jpeg']) == -1) {
+                    alert('invalid extension!');
+                }
                 let fileName = this.files[0].name;
                 let image = this.files[0].type.indexOf("image") != -1 ? URL.createObjectURL(this.files[0]) : "{{ 'file.svg' | asset_url }}";
                 let imageClass = this.files[0].type.indexOf("image") != -1 ? "custom--image" : "custom--file";
@@ -933,7 +937,7 @@
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
               <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
-          <input type="file" class="davi-theme" name="davi_input_file"  {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
+          <input type="file" class="davi-theme" name="davi_input_file" data-extension="{{ block.settings.davi_field_file_extensions }}" data-max_upload="{{ block.settings.davi_field_max_file_upload }}" {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
             </label>
@@ -945,7 +949,7 @@
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
               <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
-          <input type="file" class="davi-theme" name="davi_input_files[]" multiple   {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
+          <input type="file" class="davi-theme" name="davi_input_files[]" multiple  data-extension="{{ block.settings.davi_field_file_extensions }}" data-max_upload="{{ block.settings.davi_field_max_file_upload }}"   {% if block.settings.davi_field_show == 'step1'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
             </label>
@@ -1106,7 +1110,7 @@
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
               <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
-          <input type="file" class="davi-theme" name="davi_input_file"  {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
+          <input type="file" class="davi-theme" name="davi_input_file"  data-extension="{{ block.settings.davi_field_file_extensions }}" data-max_upload="{{ block.settings.davi_field_max_file_upload }}"  {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
             </label>
@@ -1118,7 +1122,7 @@
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
               <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
-          <input type="file" class="davi-theme" name="davi_input_files[]" multiple   {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
+          <input type="file" class="davi-theme" name="davi_input_files[]" multiple  data-extension="{{ block.settings.davi_field_file_extensions }}" data-max_upload="{{ block.settings.davi_field_max_file_upload }}"   {% if block.settings.davi_field_show == 'step2'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
             </label>
@@ -1277,7 +1281,7 @@
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
               <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
-          <input type="file" class="davi-theme" name="davi_input_file"  {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
+          <input type="file" class="davi-theme" name="davi_input_file" data-extension="{{ block.settings.davi_field_file_extensions }}" data-max_upload="{{ block.settings.davi_field_max_file_upload }}"   {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "file" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
             </label>
@@ -1289,7 +1293,7 @@
             <div class="custom-form-file">
               <img src="{{ 'fileDown.svg' | asset_url }}" />
               <p><strong>Browse File</strong> or drag and drop {{ block.settings.davi_field_file_extensions }} (max. {{ block.settings.davi_field_max_file_upload }}MB)</p>
-          <input type="file" class="davi-theme" name="davi_input_files[]" multiple   {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
+          <input type="file" class="davi-theme" name="davi_input_files[]" multiple  data-extension="{{ block.settings.davi_field_file_extensions }}" data-max_upload="{{ block.settings.davi_field_max_file_upload }}"   {% if block.settings.davi_field_show == 'step3'  and block.settings.davi_field_type == "multiplefile" and block.settings.davi_field_required == true %}  required {% endif %}>
           </div>
             <div class="custom-form-file-output"></div>
             </label>
