@@ -224,8 +224,55 @@
         "da72e801-5c1a-4a30-9e18-2120226e921a",
         "ba520f65-ba11-4f37-bd30-c2b3263804cb"
       ],
+      "disabled": true,
       "settings": {
         "section_title": "Custom Contact Form",
+        "step1_title": "Step 1 Title",
+        "step1_name": "Step 1 Name",
+        "step2_title": "Step 2 Title",
+        "step2_name": "Step 2 Name",
+        "step3_title": "Step 3 Title",
+        "step3_name": "Step 3 Name"
+      }
+    },
+    "169718100857c0d848": {
+      "type": "apps",
+      "blocks": {
+        "8a39e53c-c712-4741-bada-3155c107e95c": {
+          "type": "shopify:\/\/apps\/sc-easy-orders-status-manager\/blocks\/view_for_customer\/ace575de-ea6f-4838-bfcd-d9d0744ca684",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "8a39e53c-c712-4741-bada-3155c107e95c"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "6cdbb932-b834-4ef0-a7cc-b96b92e5395f": {
+      "type": "davi-multistep-form",
+      "blocks": {
+        "d9087a09-01b3-424f-bbfa-a4ecf3910323": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "karachi",
+            "davi_field_show": "step1",
+            "davi_field_type": "text",
+            "davi_field_value": "",
+            "davi_field_image": "",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
+          }
+        }
+      },
+      "block_order": [
+        "d9087a09-01b3-424f-bbfa-a4ecf3910323"
+      ],
+      "settings": {
+        "section_title": "Multistep Form",
         "step1_title": "Step 1 Title",
         "step1_name": "Step 1 Name",
         "step2_title": "Step 2 Title",
@@ -237,6 +284,8 @@
   },
   "order": [
     "main",
-    "a99f9569-bcf7-4ba9-ad68-d40ee463a1f6"
+    "a99f9569-bcf7-4ba9-ad68-d40ee463a1f6",
+    "169718100857c0d848",
+    "6cdbb932-b834-4ef0-a7cc-b96b92e5395f"
   ]
 }
