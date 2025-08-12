@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -16,9 +25,9 @@
           "settings": {
             "davi_field_label": "Item Type",
             "davi_field_show": "step1",
-            "davi_field_type": "dropdown_file",
+            "davi_field_type": "text",
             "davi_field_value": "html,css,react",
-            "davi_field_image": "https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png,https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png,https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png",
+            "davi_field_image": "https://placehold.co/100x100/000000/FFFFFF.png,https://placehold.co/100x100/000000/FFFFFF.png,https://placehold.co/100x100/000000/FFFFFF.png",
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
             "davi_field_required": true
@@ -135,7 +144,7 @@
             "davi_field_show": "step1",
             "davi_field_type": "multipledropdown_file",
             "davi_field_value": "item 1,item 2",
-            "davi_field_image": "https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png,https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png",
+            "davi_field_image": "https://placehold.co/100x100/000000/FFFFFF.png,https://placehold.co/100x100/000000/FFFFFF.png",
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
             "davi_field_required": false
@@ -199,7 +208,7 @@
             "davi_field_label": "Images",
             "davi_field_show": "step1",
             "davi_field_type": "images",
-            "davi_field_value": "https:\/\/placehold.co\/100x100\/000000\/FFFFFF.png",
+            "davi_field_value": "https://placehold.co/100x100/000000/FFFFFF.png",
             "davi_field_image": "",
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
@@ -224,7 +233,6 @@
         "da72e801-5c1a-4a30-9e18-2120226e921a",
         "ba520f65-ba11-4f37-bd30-c2b3263804cb"
       ],
-      "disabled": true,
       "settings": {
         "section_title": "Custom Contact Form",
         "step1_title": "Step 1 Title",
@@ -239,9 +247,8 @@
       "type": "apps",
       "blocks": {
         "8a39e53c-c712-4741-bada-3155c107e95c": {
-          "type": "shopify:\/\/apps\/sc-easy-orders-status-manager\/blocks\/view_for_customer\/ace575de-ea6f-4838-bfcd-d9d0744ca684",
-          "settings": {
-          }
+          "type": "shopify://apps/sc-easy-orders-status-manager/blocks/view_for_customer/ace575de-ea6f-4838-bfcd-d9d0744ca684",
+          "settings": {}
         }
       },
       "block_order": [
@@ -266,11 +273,26 @@
             "davi_field_file_extensions": "",
             "davi_field_required": false
           }
+        },
+        "davi_field_AhK6Ue": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "",
+            "davi_field_show": "step1",
+            "davi_field_type": "email",
+            "davi_field_value": "",
+            "davi_field_image": "",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
+          }
         }
       },
       "block_order": [
-        "d9087a09-01b3-424f-bbfa-a4ecf3910323"
+        "d9087a09-01b3-424f-bbfa-a4ecf3910323",
+        "davi_field_AhK6Ue"
       ],
+      "disabled": true,
       "settings": {
         "section_title": "Multistep Form",
         "step1_title": "Step 1 Title",
