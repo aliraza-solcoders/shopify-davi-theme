@@ -20,10 +20,23 @@
     "a99f9569-bcf7-4ba9-ad68-d40ee463a1f6": {
       "type": "davi-multistep-form",
       "blocks": {
+        "davi_field_iBHpiL": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "",
+            "davi_field_show": "step3",
+            "davi_field_type": "text",
+            "davi_field_value": "",
+            "davi_field_image": "",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
+          }
+        },
         "6b05011d-8893-4fec-ad45-d0f5045e2a93": {
           "type": "davi_field",
           "settings": {
-            "davi_field_label": "Item Type123",
+            "davi_field_label": "dropdown images",
             "davi_field_show": "step1",
             "davi_field_type": "dropdown_file",
             "davi_field_value": "html,css,react,js",
@@ -111,6 +124,19 @@
             "davi_field_required": false
           }
         },
+        "davi_field_HYpiEG": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "",
+            "davi_field_show": "step1",
+            "davi_field_type": "text",
+            "davi_field_value": "",
+            "davi_field_image": "",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
+          }
+        },
         "d2857725-dff3-405d-9e65-df0079f05d1b": {
           "type": "davi_field",
           "settings": {
@@ -122,6 +148,19 @@
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
             "davi_field_required": true
+          }
+        },
+        "davi_field_UpBA8w": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "",
+            "davi_field_show": "step1",
+            "davi_field_type": "text",
+            "davi_field_value": "",
+            "davi_field_image": "",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
           }
         },
         "1cf96a47-b5cd-4319-850f-0c8fcddf1070": {
@@ -145,6 +184,19 @@
             "davi_field_type": "multipledropdown_file",
             "davi_field_value": "item 1,item 2",
             "davi_field_image": "https://placehold.co/100x100/000000/FFFFFF.png,https://placehold.co/100x100/000000/FFFFFF.png",
+            "davi_field_max_file_upload": "",
+            "davi_field_file_extensions": "",
+            "davi_field_required": false
+          }
+        },
+        "davi_field_6Y9WjN": {
+          "type": "davi_field",
+          "settings": {
+            "davi_field_label": "",
+            "davi_field_show": "step1",
+            "davi_field_type": "text",
+            "davi_field_value": "",
+            "davi_field_image": "",
             "davi_field_max_file_upload": "",
             "davi_field_file_extensions": "",
             "davi_field_required": false
@@ -217,6 +269,7 @@
         }
       },
       "block_order": [
+        "davi_field_iBHpiL",
         "6b05011d-8893-4fec-ad45-d0f5045e2a93",
         "8a4a314c-70d9-4f6d-b55d-8ff76e9f8b24",
         "3d80c722-32dd-4cb0-98d6-9f06c7470446",
@@ -224,9 +277,12 @@
         "d248a957-a2c5-459b-85b8-bb3277475a80",
         "57549ed9-2ba6-472d-9617-7863237ffe02",
         "86c46012-fdb4-40b4-9164-288314d87dcf",
+        "davi_field_HYpiEG",
         "d2857725-dff3-405d-9e65-df0079f05d1b",
+        "davi_field_UpBA8w",
         "1cf96a47-b5cd-4319-850f-0c8fcddf1070",
         "259ca220-5d75-4a0f-94de-02eff0bc9418",
+        "davi_field_6Y9WjN",
         "0b0928eb-df79-4b39-bbe4-d913f88e5312",
         "365e361b-e96c-42d9-9d49-ba307acf72c5",
         "6f985c26-ede2-463f-bd84-17360f230009",
